@@ -36,3 +36,65 @@
     transform: rotate(360deg);
   }
 }
+
+
+.homeButton{
+  padding: 20px;
+  margin: 30px;
+}
+
+.buttonStyle{
+  border-radius: 12px;
+  background-color: springgreen;
+  font-size: 20px;
+}
+
+.navbar{
+  background-color: skyblue;
+  width: 100vw;
+  height: 80px;
+  font-weight: bold;
+  font-size:25px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.homeLayoutContainer{
+background-image:url('./components/images/clinicMain.jpg') ;
+height: 100vh;
+justify-content: center;
+align-items: center;
+
+
+}
+
+.homeContainer{
+  /* display: flex; */
+  /* flex-direction: row; */
+  width: 100vw;
+  height: 100vh;
+}
+
+.addPatientContainer{ 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+ background-color: #bdd9e0;
+ /* width: 100vw;
+ height: 100vh; */
+/* background-image:url("./images/recipe4.jpg"); */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+}
+
+.newPatientForm{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+body{
+  width: 800px;
+  align-content: center;
+}
