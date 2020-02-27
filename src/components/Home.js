@@ -1,23 +1,19 @@
 import React, { useState } from 'react'
-import Add from './NewPatient'
-
-function Example () {
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+function Home () {
   // Declare a new state variable, which we'll call "count"
   const [count, showPage] = useState(0)
   console.log(count, 'count')
   return (
     <div className='homeContainer'>
-      {/* {count ? <Add /> : <div></div>} */}
       <div className='navbar'>Welcome to Patils Dental Avenue</div>
       <div className='homeLayoutContainer'>
-
-      <div className='homeButtonh'>
-        <button className='buttonStyle' onClick={() => showPage(1)}>Existing Patient</button>
-
-        <button className='buttonStyle' onClick={() => showPage(1)}>New Patient</button>
-      </div>
+        <div className='homeButtonh'>
+          <Link to='/NewPatient'>ExistingPatient</Link>
+          <Link to='/ExistingPatient'>ExistingPatient</Link>
+        </div>
       </div>
     </div>
   )
 }
-export default Example
+export default Home
