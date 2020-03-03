@@ -1,6 +1,7 @@
 import { Button, Table, Row, Col } from 'react-bootstrap'
 import React, { useState } from 'react'
 import AddEditDeleteMenu from './AddEditDeleteMenu'
+import CurrentUser from './CurrentUser'
 function ListTreatment () {
   let treatments = [
     {
@@ -21,6 +22,7 @@ function ListTreatment () {
   ]
   return (
     <div>
+      <CurrentUser/>
       <AddEditDeleteMenu />
       <Table responsive>
         <thead>

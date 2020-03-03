@@ -6,7 +6,7 @@ function Login () {
   return (
     <div className='login-body'>
       <div className='login-section'>
-        Patils Dental Avenue
+        <div className='login-form-heading'>LOGIN</div>
         <Form>
           <Form.Group controlId='formBasicEmail'>
             <Form.Label>Email address</Form.Label>

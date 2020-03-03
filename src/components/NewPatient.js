@@ -2,13 +2,74 @@ import React, { useState } from 'react'
 import { Button, Form, Row, Col } from 'react-bootstrap'
 
 function NewPatient () {
-  // Declare a new state variable, which we'll call "count"
   console.log('added')
-  //const [count, setCount] = useState(0);
   return (
     <div className='newPatientFormBody'>
       <div className='newPatientFormSection'>
         <Form>
+          <Form.Group as={Row} controlId='formPlaintextEmail'>
+            <Form.Label column sm='2'>
+              Email
+            </Form.Label>
+            <Col sm='10'>
+              <Form.Control type='password' placeholder='Password' />
+            </Col>
+          </Form.Group>
+
+          <Form.Group as={Row} controlId='formPlaintextPassword'>
+            <Form.Label column sm='2'>
+              Password
+            </Form.Label>
+            <Col sm='10'>
+              <Form.Control type='password' placeholder='Password' />
+            </Col>
+          </Form.Group>
+          <Form.Group as={Row} controlId='formPlaintextPassword'>
+            <Form.Label column sm='2'>
+              Address
+            </Form.Label>
+            <Col sm='10'>
+              <Form.Control type='Address' placeholder='Password' />
+            </Col>
+          </Form.Group>
+          <Form.Group as={Row} controlId='formPlaintextPassword'>
+            <Form.Label column sm='2'>
+              Age
+            </Form.Label>
+            <Col sm='10'>
+              <Form.Control type='password' placeholder='Password' />
+            </Col>
+          </Form.Group>
+          <Form.Group as={Row} controlId='formPlaintextPassword'>
+            <Form.Label column sm='2'>
+              Sex
+            </Form.Label>
+            <Col sm='10'>
+              <Form.Control as='select' >
+              <option>Choose...</option>
+              <option>Male</option>
+              <option>Female</option>
+              </Form.Control>
+            </Col>
+          </Form.Group>
+          <Form.Group as={Row} controlId='formPlaintextPassword'>
+            <Form.Label column sm='2'>
+              Past Dental History
+            </Form.Label>
+            <Col sm='10'>
+              <Form.Control type='password' placeholder='Password' />
+            </Col>
+          </Form.Group>
+          <Form.Group as={Row} controlId='formPlaintextPassword'>
+            <Form.Label column sm='2'>
+              Occupation
+            </Form.Label>
+            <Col sm='10'>
+              <Form.Control type='password' placeholder='Password' />
+            </Col>
+          </Form.Group>
+        </Form>
+        {/* <Form>
           <Form.Group as={Row} controlId='formPlaintextPassword'>
             <Form.Label column sm='2'>
               Name
@@ -63,7 +124,7 @@ function NewPatient () {
           <Button variant='primary' type='submit'>
             Save Details
           </Button>
-        </Form>
+        </Form> */}
       </div>
     </div>
   )
