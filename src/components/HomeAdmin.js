@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import {
   Navbar,
   Nav,
@@ -7,27 +7,30 @@ import {
   FormControl,
   Row,
   Col
-} from 'react-bootstrap'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+} from 'react-bootstrap';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 function HomeAdmin () {
   return (
-    <Navbar bg='primary' variant='dark'>
-      <Navbar.Brand href='#home'>Admin Portal</Navbar.Brand>
-      <Nav className='mr-auto'>
-        <Nav.Link href='#home'>Add Patient</Nav.Link>
+    <div className='navbarContainer'>
+      <div className='navbarBody'>
+        <div className='navbarItem'>Home</div>
+        <Link to='/ListTreatment'>
+        <div className='navbarItem'>Treatment List</div>
+        </Link>
+        <Link to='/ListPatient'>
+          <div className='navbarItem'>Patients List</div>
+        </Link>
         <Link to='/NewPatient'>
-          <Nav.Link href='#a'>Treatment List</Nav.Link>
+          <div className='navbarItem'>Doctors List</div>
         </Link>
-        <Link to='/AddTreatment'>
-          <Nav.Link href='#a'>Add Treatment</Nav.Link>
+        <Link to='/NewPatient'>
+          <div className='navbarItem'>Contact Us</div>
         </Link>
-        <Nav.Link href='#pricing'>Doctors List</Nav.Link>
-      </Nav>
-      <Form inline>
-        <FormControl type='text' placeholder='Search' className='mr-sm-2' />
-        <Button variant='outline-light'>Search</Button>
-      </Form>
-    </Navbar>
+        <Link to='/Menubar'>
+          <div className='navbarItem'>Navbar</div>
+        </Link>
+      </div>
+    </div>
   )
 }
 export default HomeAdmin

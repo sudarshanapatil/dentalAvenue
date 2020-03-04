@@ -15,7 +15,6 @@ function NewPatient () {
               <Form.Control type='password' placeholder='Password' />
             </Col>
           </Form.Group>
-
           <Form.Group as={Row} controlId='formPlaintextPassword'>
             <Form.Label column sm='2'>
               Password

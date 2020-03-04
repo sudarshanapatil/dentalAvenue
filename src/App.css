@@ -37,59 +37,130 @@
   }
 }
 
+.Row{
+  background-color: seagreen;
+  height:100vh;
+}
 
-.homeButton{
+.navbarContainer{
+  width: 100vw;
+}
+
+.navRow{
+  background-color: teal;
+  height: 80px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  color:white;
+  border-radius: 4px;
+}
+
+.rightSectionHeading{
+  font-size: 25px;
+  color:white;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.col{
+  background-color:white;
+  height: 100vh;
+}
+
+.homeButton {
   padding: 20px;
   margin: 30px;
 }
 
-.buttonStyle{
+.buttonStyle {
   border-radius: 12px;
   background-color: springgreen;
   font-size: 20px;
 }
 
-.navbar{
+.treatmentContainer{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.treatmentBody{
+  background-color: skyblue;
+  width: 700px;
+  height: 700px;
+  
+}
+
+.navbar {
   background-color: skyblue;
   width: 100vw;
   height: 80px;
   font-weight: bold;
-  font-size:25px;
+  font-size: 25px;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
-.homeLayoutContainer{
-/* background-image:url('./components/images/clinicMain.jpg') ; */
-/* height: 100vh; */
-justify-content: center;
-align-items: center;
+
+.navbarBody{
+  height:80px;
+  background-color:lightgray;
+  display: flex;
+  flex-direction: row;
+
 }
 
-.currentUserContainer{
+.navbarItem{
+  /* background-color: rgb(153, 185, 211); */
+  width:300px;
+  margin: 4px;
+  padding:5px;
+  text-align:center;
+  font-size: 20px;
+  color:rgb(23, 102, 102);
+  font-weight:bold;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+.homeLayoutContainer {
+  /* background-image:url('./components/images/clinicMain.jpg') ; */
+  /* height: 100vh; */
+  justify-content: center;
+  align-items: center;
+}
+
+.currentUserContainer {
   background-color: pink;
   height: 80px;
 }
 
-.homeContainer{
+.homeContainer {
   /* display: flex; */
   /* flex-direction: row; */
   width: 100vw;
   height: 100vh;
 }
 
-.addPatientContainer{ 
+.addPatientContainer {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
- background-color: #bdd9e0;
- /* width: 100vw;
+  background-color: #bdd9e0;
+  /* width: 100vw;
  height: 100vh; */
-/* background-image:url("./images/recipe4.jpg"); */
+  /* background-image:url("./images/recipe4.jpg"); */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover;
 }
-.newPatientFormBody{
+.newPatientFormBody {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -103,41 +174,39 @@ align-items: center;
   padding: 60px;
 }
 
-.newPatientForm{
+.newPatientForm {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
 
-.login-body{
+.login-body {
   width: 100vw;
   height: 100vh;
-  background-color:#ccddff;
+  background-color: #ccddff;
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
-.login-form-heading{
-  text-align:center;
-  font-weight:bold;
-  font-size:18px
+.login-form-heading {
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
 }
 
-.login-section{
-  background-color:#001a4d	;
-    width: 400px;
+.login-section {
+  background-color: #001a4d;
+  width: 400px;
   padding: 40px;
-  border-radius:6px;
-  color:white;
+  border-radius: 6px;
+  color: white;
   opacity: 0.7;
-
 }
 
-body{
-  height:100vh;
+body {
+  height: 100vh;
   width: 100vw;
   align-content: center;
 }
