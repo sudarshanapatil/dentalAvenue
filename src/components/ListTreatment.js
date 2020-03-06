@@ -22,7 +22,6 @@ function ListTreatment () {
   ]
   return (
     <div>
-      <AddEditDeleteMenu />
       <Table responsive>
         <thead>
           <tr>

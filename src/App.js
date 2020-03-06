@@ -10,6 +10,7 @@ import AddTreatment from './components/AddTreatment'
 import ListPatient from './components/ListPatient'
 import Navbar from './components/Navbar'
 import Menubar from './components/Menubar'
+import AboutUs from './components/AboutUs'
 
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 function App () {
@@ -43,6 +44,9 @@ function App () {
         </Route>
         <Route path='/AddTreatment'>
           <AddTreatment />
+        </Route>
+        <Route path='/AboutUs'>
+          <AboutUs />
         </Route>
       </Switch>
     </Router>

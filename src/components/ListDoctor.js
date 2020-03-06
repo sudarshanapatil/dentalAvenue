@@ -2,39 +2,54 @@
 import { Button, Table, Row, Col } from 'react-bootstrap'
 import React, { useState } from 'react'
 function ListDoctor(){
-  let treatments=[{
-    main:'X-Ray',
-    sub:'',
-    cost:2000
+  let list=[{
+    id:1,
+    name:'Dr. Prashant Patil',
+    type:'',
+    qualification:2000
   },
   {
-    main:'X-Ray',
-    sub:'j',
-    cost:2000
+    id:2,
+    name:'Dr. Neha Patil',
+    type:'',
+    qualification:2000
   },
   {
-    main:'X-Ray',
-    sub:'',
-    cost:2000
-  }]
-return(<Table responsive>
+    id:3,
+    name:'Dr. Prashant Patil',
+    type:'',
+    qualification:2000
+  },
+  {
+    id:3,
+    name:'Dr. Prashant Patil',
+    type:'',
+    qualification:2000
+  },
+  {
+    id:3,
+    name:'Dr. Prashant Patil',
+    type:'',
+    qualification:2000
+  }
+]
+return(<Table striped bordered hover responsive size='lg' >
   <thead>
     <tr>
-      <th>Date</th>
-      <th>Treatment Name</th>
-      <th>Total Amount</th>
-      <th>Amount Paid</th>
-      <th>Balance Amount</th>
+      <th>Id</th>
+      <th> Name</th>
+      <th>Qualification</th>
+      <th>Type</th>
     </tr>
   </thead>
   <tbody>
-    {treatments.map(treatment => (
+    {list.map(item => (
       <tr>
-        <td>{treatment.main}</td>
-        <td>{treatment.name}</td>
-        <td>{treatment.cost}</td>
-        <td>{treatment.paid}</td>
-        <td>{treatment.balance}</td>
+        <td>{item.id}</td>
+        <td>{item.name}</td>
+        <td>{item.qualification}</td>
+        <td>{item.type}</td>
+        
       </tr>
     ))}
   </tbody>

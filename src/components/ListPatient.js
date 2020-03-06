@@ -1,51 +1,47 @@
 import { Button, Table, Row, Col } from 'react-bootstrap'
 import React, { useState } from 'react'
-import AddEditDelete from './AddEditDeleteMenu'
-function ListDoctor () {
+function ListPatient () {
   let treatments = [
     {
-      main: 'X-Ray',
-      sub: '',
-      cost: 2000
+      name: 'Nishigandha Waad',
+      age: 23,
+      address: 'Panvel',
+      sex: 'M'
     },
     {
-      main: 'X-Ray',
-      sub: 'j',
-      cost: 2000
+      name: 'Alaka Kubal',
+      age: 23,
+      address: 'Rasayani',
+      sex: 'M'
     },
     {
-      main: 'X-Ray',
-      sub: '',
-      cost: 2000
+      name: 'Nishigandha Waad',
+      age: 23,
+      address: 'Panvel',
+      sex: 'M'
     }
   ]
   return (
-    <div>
-      <AddEditDelete />
-
-      <Table responsive>
+      <Table striped bordered hover responsive>
         <thead>
           <tr>
-            <th>Date</th>
-            <th>Treatment Name</th>
-            <th>Total Amount</th>
-            <th>Amount Paid</th>
-            <th>Balance Amount</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Address</th>
+            <th>Sex</th>
           </tr>
         </thead>
         <tbody>
           {treatments.map(treatment => (
             <tr>
-              <td>{treatment.main}</td>
               <td>{treatment.name}</td>
-              <td>{treatment.cost}</td>
-              <td>{treatment.paid}</td>
-              <td>{treatment.balance}</td>
+              <td>{treatment.age}</td>
+              <td>{treatment.address}</td>
+              <td>{treatment.sex}</td>
             </tr>
           ))}
         </tbody>
       </Table>
-    </div>
   )
 }
-export default ListDoctor
+export default ListPatient
