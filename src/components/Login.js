@@ -10,22 +10,22 @@ function Login () {
         <Form>
           <Form.Group controlId='formBasicEmail'>
             <Form.Label>Email address</Form.Label>
-            <Form.Control type='email' placeholder='Enter email' />
+            <Form.Control style={{width:510,height:50}}type='email' placeholder='Enter email' />
           </Form.Group>
 
           <Form.Group controlId='formBasicPassword'>
             <Form.Label>Password</Form.Label>
-            <Form.Control type='password' placeholder='Password' />
+            <Form.Control style={{width:510,height:50}} type='password' placeholder='Password' />
           </Form.Group>
           <Form.Group controlId='formBasicCheckbox'>
-            <Form.Check type='checkbox' label='Check me out' />
+            <Form.Check  type='checkbox' label='Check me out' />
           </Form.Group>
 
-          <Button variant='warning' type='submit'>
+          <Button variant='warning' type='submit' style={{width:510}}>
             <Link to='/HomeAdmin'>Login</Link>
           </Button>
 
-          <Button variant='warning' type='submit'>
+          <Button variant='warning' type='submit' style={{width:510}}>
             <Link to='/AdminHome'>Register</Link>
           </Button>
         </Form>

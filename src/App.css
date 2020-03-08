@@ -48,7 +48,10 @@
 }
 
 .aboutTitle{
-  font-size:20px;
+  font-size: 50px;
+  text-align: center;
+  justify-content: center;
+  padding-bottom: 30px;
 
 }
 
@@ -197,7 +200,9 @@
 .login-body {
   width: 100vw;
   height: 100vh;
-  background-color: #ccddff;
+  background-color: white;
+  background-image:url('./components/images/clinicMain.jpg') ;
+  opacity: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -210,8 +215,8 @@
 }
 
 .login-section {
-  background-color: #001a4d;
-  width: 400px;
+  background-color: teal;
+  width: 600px;
   padding: 40px;
   border-radius: 6px;
   color: white;
@@ -258,7 +263,7 @@ body {
 .form-control {
   border-radius: none;
   border-color:teal!important;
-  width:60%!important;
+  width:60%;
 }
 
 .newPatienForm{
