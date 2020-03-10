@@ -26,7 +26,7 @@ function Login () {
           </Button>
 
           <Button variant='warning' type='submit' style={{width:510}}>
-            <Link to='/AdminHome'>Register</Link>
+            <Link to='/HomeAdmin'>Register</Link>
           </Button>
         </Form>
       </div>

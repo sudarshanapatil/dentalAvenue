@@ -52,7 +52,17 @@
   text-align: center;
   justify-content: center;
   padding-bottom: 30px;
+  color: #0062cc;
 
+}
+
+.aboutText{
+  text-align: center;
+  color:teal;
+  font-size: 25px;
+  padding-bottom: 30px;
+  align-items: center;
+  justify-content: center;
 }
 
 .navbarContainer{
@@ -77,7 +87,7 @@
   align-items: center;
   justify-content: center;
   height:80px;
-  background-color: steelblue;
+  background-color: teal;
 }
 .col{
   background-color:white;
@@ -242,6 +252,7 @@ body {
   height: 50px;
   border-color:none;
   font-size: 30px;
+  color: white;
   /* background-color: #007bff; */
 }
 
@@ -267,7 +278,7 @@ body {
 }
 
 .newPatienForm{
-  width: 100vw;
+  width: 900px;
   height: 100vh;
   padding-top: 20px;
   padding-left: 60px;
@@ -286,9 +297,70 @@ width: 960px;
 }
 
 .clinicLogo{
-  width:400px
+  width:800px;
+  font-size: 25px;
+  text-align: center;
+  margin: 15px;
+  justify-content: center;
+  FONT-WEIGHT: 100;
+  align-items: center;
+  font-weight: bold;
+  color: teal;
 }
 
 .table td, .table th{
   font-size: 20px;
+}
+
+.card-body{
+
+  text-align: center;
+}
+
+.serviceImagesRow{
+  height: 300px;
+  border:2px teal;
+}
+
+.servicesTitle{
+  font-size: 30px;
+  text-align: center;
+  justify-content: center;
+  color: teal;
+  padding: 10px;
+}
+
+.serviceImageCol{
+  /* display:flex; */
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.serviceImageHeading{
+  font-size: 20px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.serviceImageContainer{
+  align-items: center;
+  justify-content: center;
+}
+
+.serviceCaseStudy{
+  padding:10px;
+  justify-content: center;
+  border-color: teal;
+  border-style: solid;
+}
+
+.containerHomeAdmin{
+background-image: url('./components/images/clinicMain.jpg');
+}
+
+.detailSectionAdmin{
+  height: 100vh;
+
 }

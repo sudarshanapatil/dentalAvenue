@@ -5,46 +5,82 @@ import CurrentUser from './CurrentUser'
 function ListTreatment () {
   let treatments = [
     {
-      main: 'X-Ray',
-      sub: '',
+      name: 'OPD',
       cost: 2000
     },
     {
-      main: 'X-Ray',
-      sub: 'j',
+      name: 'X-Ray',
       cost: 2000
     },
     {
-      main: 'X-Ray',
-      sub: '',
+      name: 'Scaling/Cleaning',
       cost: 2000
-    }
+    },
+    {
+      name: 'Filling',
+      cost: 2000
+    },
+    {
+      name: 'Root canel treatment',
+      cost: 2000
+    },
+    {
+      name: 'Post and core',
+      cost: 2000
+    },
+    {
+      name: 'Extraction',
+      cost: 2000
+    },
+    {
+      name: 'Bridge',
+      cost: 2000
+    },
+    {
+      name: 'Crown',
+      cost: 2000
+    },
+    {
+      name: 'Implant',
+      cost: 2000
+    },
+    {
+      name: 'Removable partial denture',
+      cost: 2000
+    },
+    {
+      name: 'Complete Denture',
+      cost: 2000
+    },
+    {
+      name: 'Perio surgery',
+      cost: 2000
+    },
+    {
+      name: 'Space maintainer',
+      cost: 2000
+    },
+
+
+
   ]
   return (
-    <div>
-      <Table responsive>
+      <Table striped bordered hover responsive size='lg'>
         <thead>
           <tr>
-            <th>Date</th>
-            <th>Treatment Name</th>
-            <th>Total Amount</th>
-            <th>Amount Paid</th>
-            <th>Balance Amount</th>
+            <th>Name</th>
+            <th>Cost</th>
           </tr>
         </thead>
         <tbody>
           {treatments.map(treatment => (
             <tr>
-              <td>{treatment.main}</td>
               <td>{treatment.name}</td>
               <td>{treatment.cost}</td>
-              <td>{treatment.paid}</td>
-              <td>{treatment.balance}</td>
             </tr>
           ))}
         </tbody>
       </Table>
-    </div>
   )
 }
 export default ListTreatment

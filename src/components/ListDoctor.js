@@ -5,32 +5,32 @@ function ListDoctor(){
   let list=[{
     id:1,
     name:'Dr. Prashant Patil',
-    type:'',
-    qualification:2000
+    type:'Regular',
+    qualification:'Implantologist'
   },
   {
     id:2,
     name:'Dr. Neha Patil',
-    type:'',
-    qualification:2000
+    type:'Regular',
+    qualification:'Pedodontist'
   },
   {
     id:3,
-    name:'Dr. Prashant Patil',
-    type:'',
-    qualification:2000
+    name:'Dr. Mahesh Patil',
+    type:'Visting',
+    qualification:'Prostodontist'
   },
   {
     id:3,
-    name:'Dr. Prashant Patil',
-    type:'',
-    qualification:2000
+    name:'Dr. Jitendra Patil',
+    type:'Visting',
+    qualification:'Pedodontist'
   },
   {
     id:3,
-    name:'Dr. Prashant Patil',
-    type:'',
-    qualification:2000
+    name:'Dr. Varsha Patil',
+    type:'Visting',
+    qualification:'Pedodontist'
   }
 ]
 return(<Table striped bordered hover responsive size='lg' >

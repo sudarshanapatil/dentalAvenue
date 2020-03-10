@@ -7,23 +7,24 @@ function Navbar () {
     <div className='navbarContainer'>
       <div className='navbarBody'>
         <div className='clinicLogo'>
-          <Image src={require('./images/logo.png')} roundedCircle />
+          PATILS DENTAL AVENUE
+          {/* <Image src={require('./images/logo.png')} roundedCircle /> */}
       
           </div>
-        <Link to='/ListTreatment'>
+        <Link to='/HomeAdmin'>
           <div className='navbarItem'>Home</div>
         </Link>
-        <Link to='/AboutUs'>
+        <Link to='/Services'>
           <div className='navbarItem'>Blog</div>
         </Link>
         <Link to='/AboutUs'>
           <div className='navbarItem'>Team</div>
         </Link>
-        <Link to='/AboutUs'>
+        <Link to='/Services'>
           <div className='navbarItem'>Services</div>
         </Link>
         
-        <Link to='/NewPatient'>
+        <Link to='/AboutUs'>
           <div className='navbarItem'>Contact Us</div>
         </Link>
       </div>
