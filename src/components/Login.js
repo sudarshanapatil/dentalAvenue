@@ -1,38 +1,38 @@
-import React, { Component } from "react";
-import "../styles/Login.css";
+import React from "react";
 import { Button, Form, Container, Card } from "react-bootstrap";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import "../styles/Login.css";
 
 const Login = () => {
   return (
     <Container fluid className="login-body">
-      <Card style={{ width: "40rem" }} className="login-container">
+      <Card className="login-container">
         <Card.Body>
-          <Card.Title>Patil's Dental Avenue</Card.Title>
-          <Card.Subtitle className="mb-2 text-muted">Login</Card.Subtitle>
+          <Card.Subtitle className="card-subtitle">Login</Card.Subtitle>
+          <hr className="login-title-hr" />
           <Form style={{ textAlign: "start" }}>
             <Form.Group controlId="formBasicEmail">
-              <Form.Label>Email Address</Form.Label>
               <Form.Control
-                style={{ width: "100%", height: 60 }}
                 type="email"
                 placeholder="Email Address"
+                className="login-control"
               />
             </Form.Group>
             <Form.Group controlId="formBasicEmail">
-              <Form.Label>Password</Form.Label>
               <Form.Control
-                style={{ width: "100%", height: 60 }}
                 type="password"
-                placeholder="Enter Password"
+                placeholder="Password"
+                className="login-control"
               />
             </Form.Group>
             <Form.Group controlId="formBasicEmail">
-              <Button variant="primary" type="submit" style={{ width: "100%" }}>
-                <Link to="/HomeAdmin">Login</Link>
+              <Button variant="primary" type="submit" className="login-button">
+                <Link to="/HomeAdmin" className="login-button-link">
+                  Login
+                </Link>
               </Button>
             </Form.Group>
-            <Link to="/HomeAdmin" style={{ textAlign: "center" }}>
+            <Link to="/HomeAdmin" className="login-button-link-2">
               Forgot Password?
             </Link>
           </Form>
