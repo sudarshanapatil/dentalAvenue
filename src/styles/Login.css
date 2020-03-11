@@ -1,0 +1,13 @@
+.login-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../components/images/clinicMain.jpg");
+  opacity: 0.4;
+  z-index: -100;
+}
+
+.login-container {
+  /* background-color: lawngreen !important; */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+}

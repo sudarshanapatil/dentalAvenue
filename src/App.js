@@ -1,60 +1,63 @@
-import React from 'react'
-import './App.css'
-//import Home from './components/Home'
-import NewPatient from './components/NewPatient'
-import OldPatient from './components/OldPatient'
-import Login from './components/Login'
-import HomeAdmin from './components/HomeAdmin'
-import ListTreatment from './components/ListTreatment'
-import AddTreatment from './components/AddTreatment'
-import ListPatient from './components/ListPatient'
-import Navbar from './components/Navbar'
-import Menubar from './components/Menubar'
-import AboutUs from './components/AboutUs'
-import Services from './components/Services'
+import React from "react";
+import "./App.css";
+import Home from "./components/Home";
+import NewPatient from "./components/NewPatient";
+import OldPatient from "./components/OldPatient";
+import Login from "./components/Login";
+import HomeAdmin from "./components/HomeAdmin";
+import ListTreatment from "./components/ListTreatment";
+import AddTreatment from "./components/AddTreatment";
+import ListPatient from "./components/ListPatient";
+import Navbar from "./components/Navbar";
+import Menubar from "./components/Menubar";
+import AboutUs from "./components/AboutUs";
+import Services from "./components/Services";
 
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
-function App () {
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+function App() {
   return (
     <Router>
       {/* <Link to='/'>Home</Link> */}
       <Switch>
-        <Route exact path='/'>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/login">
           <Login />
         </Route>
-        <Route path='/NewPatient'>
+        <Route path="/NewPatient">
           <NewPatient />
         </Route>
-        <Route path='/ListPatient'>
+        <Route path="/ListPatient">
           <ListPatient />
         </Route>
-        <Route path='/Navbar'>
+        <Route path="/Navbar">
           <Navbar />
         </Route>
-        <Route path='/Menubar'>
+        <Route path="/Menubar">
           <Menubar />
         </Route>
-        <Route path='/ExistingPatient'>
+        <Route path="/ExistingPatient">
           <OldPatient />
         </Route>
-        <Route path='/HomeAdmin'>
+        <Route path="/HomeAdmin">
           <HomeAdmin />
         </Route>
-        <Route path='/ListTreatment'>
+        <Route path="/ListTreatment">
           <ListTreatment />
         </Route>
-        <Route path='/AddTreatment'>
+        <Route path="/AddTreatment">
           <AddTreatment />
         </Route>
-        <Route path='/AboutUs'>
+        <Route path="/AboutUs">
           <AboutUs />
         </Route>
-        <Route path='/Services'>
+        <Route path="/Services">
           <Services />
         </Route>
       </Switch>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;
