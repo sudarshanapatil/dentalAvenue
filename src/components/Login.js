@@ -6,6 +6,7 @@ import "../styles/Login.css";
 const Login = () => {
   return (
     <Container fluid className="login-body">
+      <img src={require("../components/images/clinicMain.jpg")} />
       <Card className="login-container">
         <Card.Body>
           <Card.Subtitle className="card-subtitle">Login</Card.Subtitle>

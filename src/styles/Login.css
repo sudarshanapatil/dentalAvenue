@@ -2,17 +2,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("../components/images/clinicMain.jpg");
+  position: relative;
+  overflow: hidden;
+  /* background-image: url("../components/images/clinicMain.jpg"); */
   /* TODO: add opacity to the background image */
+}
+
+.login-body img {
   position: absolute;
   top: 0;
   left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0.5;
 }
 
 .login-container {
-  z-index: 2;
   width: 35rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.4) !important;
 }
 
 .card-subtitle {
@@ -59,12 +68,17 @@
 
 .login-button-link :hover {
   color: #ffffff !important;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 .login-button-link-2 {
   font-size: 1.2rem !important;
   color: #00ccff;
   text-decoration: none;
-  text-align: center !important;
+}
+
+.login-button-link-2 :hover {
+  font-size: 1.2rem !important;
+  color: #00ccff;
+  text-decoration: none;
 }
