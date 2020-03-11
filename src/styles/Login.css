@@ -4,8 +4,7 @@
   justify-content: center;
   position: relative;
   overflow: hidden;
-  /* background-image: url("../components/images/clinicMain.jpg"); */
-  /* TODO: add opacity to the background image */
+  background-color: #000000;
 }
 
 .login-body img {
@@ -42,9 +41,9 @@
 }
 
 .login-control {
-  font-size: 1.2rem !important;
+  font-size: 1.1rem !important;
   width: 100% !important;
-  height: 4rem !important;
+  height: 3.5rem !important;
   border-color: #00ccff !important;
   color: #00ccff !important;
 }
@@ -55,13 +54,13 @@
 
 .login-button {
   width: 100%;
-  height: 4rem;
+  height: 3.5rem;
   background-color: #33cccc !important;
   border-color: #33cccc !important;
 }
 
 .login-button-link {
-  font-size: 1.2rem !important;
+  font-size: 1.1rem !important;
   color: #ffffff;
   text-decoration: none;
 }
