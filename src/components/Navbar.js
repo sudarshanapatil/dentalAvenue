@@ -1,35 +1,49 @@
-import React, { Component } from 'react'
-import '../App.css'
-import { Button, Form, Container, Row, Col,Image } from 'react-bootstrap'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
-function Navbar () {
-  return (
-    <div className='navbarContainer'>
-      <div className='navbarBody'>
-        <div className='clinicLogo'>
-          PATILS DENTAL AVENUE
-          {/* <Image src={require('./images/logo.png')} roundedCircle /> */}
-      
-          </div>
-        <Link to='/HomeAdmin'>
-          <div className='navbarItem'>Home</div>
-        </Link>
-        <Link to='/Services'>
-          <div className='navbarItem'>Blog</div>
-        </Link>
-        <Link to='/AboutUs'>
-          <div className='navbarItem'>Team</div>
-        </Link>
-        <Link to='/Services'>
-          <div className='navbarItem'>Services</div>
-        </Link>
-        
-        <Link to='/AboutUs'>
-          <div className='navbarItem'>Contact Us</div>
-        </Link>
-      </div>
-    </div>
-  )
-}
+import React, { Component } from "react";
+import "../styles/Navbar.css";
+import { Button, Form, Container, Row, Col, Image } from "react-bootstrap";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-export default Navbar
+const Navbar = () => {
+  return (
+    <Row noGutters className="navbar-header">
+      <Col md={4}>
+        <Link to="/HomeAdmin" className="navbar-link">
+          <div className="navbar-item navbar-title">PATIL'S DENTAL AVENUE</div>
+        </Link>
+      </Col>
+      <Col md={2}></Col>
+      <Col md={1}>
+        <Link to="/HomeAdmin" className="navbar-link">
+          <div className="navbar-item">Home</div>
+        </Link>
+      </Col>
+      <Col md={1}>
+        <Link to="/Services" className="navbar-link">
+          <div className="navbar-item">Blog</div>
+        </Link>
+      </Col>
+      <Col md={1}>
+        <Link to="/AboutUs" className="navbar-link">
+          <div className="navbar-item">Team</div>
+        </Link>
+      </Col>
+      <Col md={1}>
+        <Link to="/Services" className="navbar-link">
+          <div className="navbar-item">Services</div>
+        </Link>
+      </Col>
+      <Col md={1}>
+        <Link to="/ContactUs" className="navbar-link">
+          <div className="navbar-item">Contact Us</div>
+        </Link>
+      </Col>
+      <Col md={1}>
+        <Link to="/login" className="navbar-link">
+          <div className="navbar-item">Login</div>
+        </Link>
+      </Col>
+    </Row>
+    // </Container>
+  );
+};
+export default Navbar;
