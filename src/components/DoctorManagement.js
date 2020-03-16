@@ -20,6 +20,12 @@ class DoctorManagement extends React.Component {
   }
 
   componentDidMount = () => {
+    console.log("in component did mount")
+
+    fetch('https://reqres.in/api/users?page=2')
+    .then(res=>res.json())
+    .then(result=>{console.log(result,"res")})
+    .catch(err=>console.log(err))
     this.getDoctorsList();
   };
 

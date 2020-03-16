@@ -1,33 +1,26 @@
 import React, { useState, Component } from "react";
 import { Nav, Container, Row, Col, Tab } from "react-bootstrap";
 import Navbar from "./Navbar";
+
 import DoctorManagement from "./DoctorManagement";
 import PatientManagement from "./PatientManagement";
 import TreatmentManagement from "./TreatmentManagement";
 
 import "../styles/HomeAdmin.css";
 
-class HomeAdmin extends Component {
+class HomeDoctor extends Component {
   constructor(props) {
     super(props);
     this.state = {
       menuItems: [
+        
         {
           key: 1,
-          tabName: "Manage Doctors",
-          component: <DoctorManagement />
-        },
-        {
-          key: 2,
           tabName: "Manage Patient",
           component: <PatientManagement />
         },
         {
-          key: 3,
-          tabName: "Manage Treatment",
-          component: <TreatmentManagement />
-        }, {
-          key: 4,
+          key: 2,
           tabName: "Schedular Setting",
           component: <TreatmentManagement />
         }
@@ -67,4 +60,4 @@ class HomeAdmin extends Component {
     );
   }
 }
-export default HomeAdmin;
+export default HomeDoctor;

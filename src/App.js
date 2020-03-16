@@ -1,10 +1,10 @@
 import React from "react";
 import "./App.css";
-import Home from "./components/Home";
 import NewPatient from "./components/NewPatient";
 import OldPatient from "./components/OldPatient";
 import Login from "./components/Login";
 import HomeAdmin from "./components/HomeAdmin";
+import HomeDoctor from './components/HomeDoctor'
 import AboutUs from "./components/AboutUs";
 import Services from "./components/Services";
 import ListPatientsTreatment from "./components/ListPatientsTreatment";
@@ -14,8 +14,8 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/">
-          <Home />
+        <Route exact path="/HomeDoctor">
+          <HomeDoctor />
         </Route>
         <Route exact path="/login">
           <Login />
