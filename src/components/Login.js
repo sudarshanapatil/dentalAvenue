@@ -27,11 +27,15 @@ const Login = () => {
               />
             </Form.Group>
             <Form.Group controlId="formBasicEmail">
-              <Button variant="primary" type="submit" className="login-button">
-                <Link to="/HomeAdmin" className="login-button-link">
+              <Link to="/HomeAdmin" className="login-button-link">
+                <Button
+                  variant="primary"
+                  type="submit"
+                  className="login-button"
+                >
                   Login
-                </Link>
-              </Button>
+                </Button>
+              </Link>
             </Form.Group>
             <Link to="/HomeAdmin" className="login-button-link-2">
               Forgot Password?
