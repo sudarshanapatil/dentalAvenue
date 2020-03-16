@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 
 const AddPatient = props => {
+  let patientDetails = {}; // TO CHECK: may need to make stateful due to form changes
   return (
     <Form className="newPatienForm">
       <Form.Group as={Row} controlId="formPlaintextPassword">
@@ -109,7 +110,12 @@ const AddPatient = props => {
       >
         Cancel
       </Button>
-      <Button variant="primary" type="submit" className="form-button">
+      <Button
+        variant="primary"
+        type="submit"
+        className="form-button"
+        onClick={() => props.savePatientDetails(patientDetails)}
+      >
         Save
       </Button>
     </Form>
