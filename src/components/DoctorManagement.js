@@ -10,6 +10,7 @@ class DoctorManagement extends React.Component {
     super(props);
     this.state = {
       currentAction: "list", // ['list', 'add', 'edit', 'delete']
+      doctorsList: [],
       doctorDetails: {
         name: "Neha Patil",
         qualification: "MDS",
@@ -17,6 +18,49 @@ class DoctorManagement extends React.Component {
       }
     };
   }
+
+  componentDidMount = () => {
+    this.getDoctorsList();
+  };
+
+  getDoctorsList = () => {
+    // To be replaced with API call to fetch doctors list
+    let list = [
+      {
+        id: 1,
+        name: "Dr. Prashant Patil",
+        type: "Regular",
+        qualification: "Implantologist"
+      },
+      {
+        id: 2,
+        name: "Dr. Neha Patil",
+        type: "Regular",
+        qualification: "Pedodontist"
+      },
+      {
+        id: 3,
+        name: "Dr. Mahesh Patil",
+        type: "Visting",
+        qualification: "Prostodontist"
+      },
+      {
+        id: 3,
+        name: "Dr. Jitendra Patil",
+        type: "Visting",
+        qualification: "Pedodontist"
+      },
+      {
+        id: 3,
+        name: "Dr. Varsha Patil",
+        type: "Visting",
+        qualification: "Pedodontist"
+      }
+    ];
+    this.setState({
+      doctorsList: list
+    });
+  };
 
   setActionType = actionType => {
     this.setState({
@@ -29,7 +73,7 @@ class DoctorManagement extends React.Component {
       case "list": {
         return (
           <Row noGutters>
-            <ListDoctor />
+            <ListDoctor doctorsList={this.state.doctorsList} />
           </Row>
         );
         break;

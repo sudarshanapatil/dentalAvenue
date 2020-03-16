@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   Button,
   Table,
@@ -8,8 +9,8 @@ import {
   InputGroup,
   Form
 } from "react-bootstrap";
-import React, { useState } from "react";
-function AddTreatment() {
+
+const AddTreatment = props => {
   return (
     <Form className="newPatienForm">
       <Form.Group as={Row} controlId="formPlaintextPassword">
@@ -29,13 +30,17 @@ function AddTreatment() {
         </Col>
       </Form.Group>
 
-      <Button variant="primary" type="submit">
+      <Button
+        variant="secondary"
+        className="form-button"
+        onClick={() => props.setActionType("list")}
+      >
         Cancel
       </Button>
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" className="form-button">
         Save
       </Button>
     </Form>
   );
-}
+};
 export default AddTreatment;

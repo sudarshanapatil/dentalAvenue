@@ -8,23 +8,93 @@ class TreatmentManagement extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentScreen: "list" // ['list', 'add', 'edit', 'delete']
+      currentAction: "list", // ['list', 'add', 'edit', 'delete']
+      treatmentsList: [],
+      treatmentDetails: {}
     };
   }
 
-  setActionType = currentScreen => {
+  componentDidMount = () => {
+    this.getTreatmentsList();
+  };
+
+  getTreatmentsList = () => {
+    // API call to get treatments list
+    let treatments = [
+      {
+        name: "OPD",
+        cost: 2000
+      },
+      {
+        name: "X-Ray",
+        cost: 2000
+      },
+      {
+        name: "Scaling/Cleaning",
+        cost: 2000
+      },
+      {
+        name: "Filling",
+        cost: 2000
+      },
+      {
+        name: "Root canel treatment",
+        cost: 2000
+      },
+      {
+        name: "Post and core",
+        cost: 2000
+      },
+      {
+        name: "Extraction",
+        cost: 2000
+      },
+      {
+        name: "Bridge",
+        cost: 2000
+      },
+      {
+        name: "Crown",
+        cost: 2000
+      },
+      {
+        name: "Implant",
+        cost: 2000
+      },
+      {
+        name: "Removable partial denture",
+        cost: 2000
+      },
+      {
+        name: "Complete Denture",
+        cost: 2000
+      },
+      {
+        name: "Perio surgery",
+        cost: 2000
+      },
+      {
+        name: "Space maintainer",
+        cost: 2000
+      }
+    ];
     this.setState({
-      currentScreen,
-      treatmentDetails: {}
+      treatmentsList: treatments
+    });
+  };
+
+  setActionType = actionType => {
+    this.setState({
+      currentAction: actionType
     });
   };
 
   renderCurrentScreen = () => {
-    switch (this.state.currentScreen) {
+    switch (this.state.currentAction) {
       case "list": {
         return (
           <Row noGutters>
-            <ListTreatment />
+            <ListTreatment treatmentsList={this.state.treatmentsList} />
           </Row>
         );
         break;
@@ -36,6 +106,7 @@ class TreatmentManagement extends React.Component {
           <AddTreatment
             type={"add"}
             treatmentDetails={this.state.treatmentDetails}
+            setActionType={actionType => this.setActionType(actionType)}
           />
         );
         break;
@@ -47,6 +118,7 @@ class TreatmentManagement extends React.Component {
           <AddTreatment
             type={"edit"}
             treatmentDetails={this.state.treatmentDetails}
+            setActionType={actionType => this.setActionType(actionType)}
           />
         );
         break;
@@ -62,26 +134,16 @@ class TreatmentManagement extends React.Component {
     }
   };
 
-  setAddEditDelete = actionType => {
-    this.setState({
-      currentScreen: actionType
-    });
-  };
-
   render() {
     return (
       <Container fluid>
         <Row noGutters>
           <span className="body-title">Treatment Management</span>
         </Row>
-        {this.state.currentScreen === "list" ? (
+        {this.state.currentAction === "list" && (
           <AddEditDeleteMenu
-            setAddEditDelete={this.setAddEditDelete.bind(this)}
+            setActionType={actionType => this.setActionType(actionType)}
           />
-        ) : (
-          <Button variant="dark" onClick={() => this.setAddEditDelete("list")}>
-            Back
-          </Button>
         )}
         {this.renderCurrentScreen()}
       </Container>
