@@ -155,10 +155,7 @@
   align-items: center;
 }
 
-.currentUserContainer {
-  background-color: pink;
-  height: 80px;
-}
+
 
 .homeContainer {
   /* display: flex; */
