@@ -6,37 +6,36 @@ import {
   DropdownButton,
   Dropdown,
   InputGroup,
-  FormControl
+  Form
 } from "react-bootstrap";
 import React, { useState } from "react";
 function AddTreatment() {
   return (
-    <div className="treatmentContainer">
-      <div className="treatmentBody">
-        <InputGroup className="mb-3">
-          <DropdownButton id="dropdown-basic-button" title="Dropdown button">
-            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-          </DropdownButton>
-          <InputGroup.Prepend>
-            <InputGroup.Text>Add treatment</InputGroup.Text>
-          </InputGroup.Prepend>
-          <FormControl />
-          <FormControl />
-        </InputGroup>
+    <Form className="newPatienForm">
+      <Form.Group as={Row} controlId="formPlaintextPassword">
+        <Form.Label column sm="2">
+          Name
+        </Form.Label>
+        <Col sm="10">
+          <Form.Control type="text" placeholder="Enter Name" />
+        </Col>
+      </Form.Group>
+      <Form.Group as={Row} controlId="formPlaintextEmail">
+        <Form.Label column sm="2">
+          Cost
+        </Form.Label>
+        <Col sm="10">
+          <Form.Control type="email" placeholder="Enter Email" />
+        </Col>
+      </Form.Group>
 
-        <InputGroup className="mb-3">
-          <InputGroup.Prepend>
-            <InputGroup.Text>RS</InputGroup.Text>
-          </InputGroup.Prepend>
-          <FormControl aria-label="Amount (to the nearest rupees)" />
-          <InputGroup.Append>
-            <InputGroup.Text>.00</InputGroup.Text>
-          </InputGroup.Append>
-        </InputGroup>
-      </div>
-    </div>
+      <Button variant="primary" type="submit">
+        Cancel
+      </Button>
+      <Button variant="primary" type="submit">
+        Save
+      </Button>
+    </Form>
   );
 }
 export default AddTreatment;
