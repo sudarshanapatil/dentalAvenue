@@ -38,7 +38,7 @@ class HomeAdmin extends Component {
         <Navbar />
         <Tab.Container id="left-tabs-example" defaultActiveKey={1}>
           <Row noGutters className="no-padding">
-            <Col sm={3}>
+            <Col md={2}>
               <Nav variant="pills" className="flex-column">
                 {this.state.menuItems.map((item, i) => (
                   <Nav.Item key={`nav_item_${i}`}>
@@ -49,7 +49,7 @@ class HomeAdmin extends Component {
                 ))}
               </Nav>
             </Col>
-            <Col sm={9}>
+            <Col md={10}>
               <Tab.Content>
                 {this.state.menuItems.map((item, i) => (
                   <Tab.Pane key={`tab_pane_${i}`} eventKey={item.key}>

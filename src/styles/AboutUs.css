@@ -1,0 +1,11 @@
+/* .doctors-showcase {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+.doctor-tab {
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important;
+}

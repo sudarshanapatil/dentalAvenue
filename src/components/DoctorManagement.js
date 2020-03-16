@@ -9,23 +9,71 @@ class DoctorManagement extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentScreen: "list" // ['list', 'add', 'edit', 'delete']
+      currentAction: "list", // ['list', 'add', 'edit', 'delete']
+      doctorsList: [],
+      doctorDetails: {
+        name: "Neha Patil",
+        qualification: "MDS",
+        type: "permanent"
+      }
     };
   }
 
-  setActionType = currentScreen => {
+  componentDidMount = () => {
+    this.getDoctorsList();
+  };
+
+  getDoctorsList = () => {
+    // To be replaced with API call to fetch doctors list
+    let list = [
+      {
+        id: 1,
+        name: "Dr. Prashant Patil",
+        type: "Regular",
+        qualification: "Implantologist"
+      },
+      {
+        id: 2,
+        name: "Dr. Neha Patil",
+        type: "Regular",
+        qualification: "Pedodontist"
+      },
+      {
+        id: 3,
+        name: "Dr. Mahesh Patil",
+        type: "Visting",
+        qualification: "Prostodontist"
+      },
+      {
+        id: 3,
+        name: "Dr. Jitendra Patil",
+        type: "Visting",
+        qualification: "Pedodontist"
+      },
+      {
+        id: 3,
+        name: "Dr. Varsha Patil",
+        type: "Visting",
+        qualification: "Pedodontist"
+      }
+    ];
     this.setState({
-      currentScreen,
-      doctorDetails: {}
+      doctorsList: list
+    });
+  };
+
+  setActionType = actionType => {
+    this.setState({
+      currentAction: actionType
     });
   };
 
   renderCurrentScreen = () => {
-    switch (this.state.currentScreen) {
+    switch (this.state.currentAction) {
       case "list": {
         return (
           <Row noGutters>
-            <ListDoctor />
+            <ListDoctor doctorsList={this.state.doctorsList} />
           </Row>
         );
         break;
@@ -34,7 +82,10 @@ class DoctorManagement extends React.Component {
       case "add": {
         // TODO: send selected doctor data
         return (
-          <AddDoctor type={"add"} doctorDetails={this.state.doctorDetails} />
+          <AddDoctor
+            type={"add"}
+            setActionType={actionType => this.setActionType(actionType)}
+          />
         );
         break;
       }
@@ -42,7 +93,11 @@ class DoctorManagement extends React.Component {
       case "edit": {
         // TODO: send selected doctor data
         return (
-          <AddDoctor type={"edit"} doctorDetails={this.state.doctorDetails} />
+          <AddDoctor
+            type={"edit"}
+            doctorDetails={this.state.doctorDetails}
+            setActionType={actionType => this.setActionType(actionType)}
+          />
         );
         break;
       }
@@ -57,26 +112,16 @@ class DoctorManagement extends React.Component {
     }
   };
 
-  setAddEditDelete = actionType => {
-    this.setState({
-      currentScreen: actionType
-    });
-  };
-
   render() {
     return (
       <Container fluid>
         <Row noGutters>
           <span className="body-title">Doctor Management</span>
         </Row>
-        {this.state.currentScreen === "list" ? (
+        {this.state.currentAction === "list" && (
           <AddEditDeleteMenu
-            setAddEditDelete={this.setAddEditDelete.bind(this)}
+            setActionType={actionType => this.setActionType(actionType)}
           />
-        ) : (
-          <Button variant="dark" onClick={() => this.setAddEditDelete("list")}>
-            Back
-          </Button>
         )}
         {this.renderCurrentScreen()}
       </Container>
