@@ -12,6 +12,7 @@ import Navbar from './components/Navbar'
 import Menubar from './components/Menubar'
 import AboutUs from './components/AboutUs'
 import Services from './components/Services'
+import ListPatientsTreatment from './components/ListPatientsTreatment'
 
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 function App () {
@@ -52,6 +53,10 @@ function App () {
         <Route path='/Services'>
           <Services />
         </Route>
+        <Route path='/ListPatientsTreatment'>
+          <ListPatientsTreatment />
+        </Route>
+        
       </Switch>
     </Router>
   )

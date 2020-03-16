@@ -1,4 +1,4 @@
-import { Button, Table, Row, Col } from 'react-bootstrap'
+import { Button, Table, Row, Col, Container } from 'react-bootstrap'
 import React, { useState } from 'react'
 import AddEditDeleteMenu from './AddEditDeleteMenu'
 import CurrentUser from './CurrentUser'
@@ -21,30 +21,33 @@ function ListTreatment () {
     }
   ]
   return (
-    <div>
-      <Table responsive>
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Treatment Name</th>
-            <th>Total Amount</th>
-            <th>Amount Paid</th>
-            <th>Balance Amount</th>
-          </tr>
-        </thead>
-        <tbody>
-          {treatments.map(treatment => (
+    <Container fluid>
+        <CurrentUser />
+      <Row>
+        <Table responsive>
+          <thead>
             <tr>
-              <td>{treatment.date}</td>
-              <td>{treatment.name}</td>
-              <td>{treatment.cost}</td>
-              <td>{treatment.paid}</td>
-              <td>{treatment.balance}</td>
+              <th>Date</th>
+              <th>Treatment Name</th>
+              <th>Total Amount</th>
+              <th>Amount Paid</th>
+              <th>Balance Amount</th>
             </tr>
-          ))}
-        </tbody>
-      </Table>
-    </div>
+          </thead>
+          <tbody>
+            {treatments.map(treatment => (
+              <tr>
+                <td>{treatment.date}</td>
+                <td>{treatment.name}</td>
+                <td>{treatment.cost}</td>
+                <td>{treatment.paid}</td>
+                <td>{treatment.balance}</td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </Row>
+    </Container>
   )
 }
 export default ListTreatment
