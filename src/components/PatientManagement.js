@@ -8,19 +8,34 @@ class PatientManagement extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentScreen: "list" // ['list', 'add', 'edit', 'delete']
+      currentAction: "list", // ['list', 'add', 'edit', 'delete']
+      patientDetails: {
+        name: "",
+        email: "",
+        address: "",
+        age: "",
+        gender: "",
+        pastDentalHistory: "",
+        chiefComplaint: "",
+        previousDiagnosis: "",
+        provisionalTreatmentPlan: "",
+        occupation: ""
+      }
     };
   }
 
-  setActionType = currentScreen => {
+  savePatient = patientDetails => {
+    // API call to save patient details
+  };
+
+  setActionType = actionType => {
     this.setState({
-      currentScreen,
-      patientDetails: {}
+      currentAction: actionType
     });
   };
 
   renderCurrentScreen = () => {
-    switch (this.state.currentScreen) {
+    switch (this.state.currentAction) {
       case "list": {
         return (
           <Row noGutters>
@@ -31,25 +46,29 @@ class PatientManagement extends React.Component {
       }
 
       case "add": {
-        // TODO: send selected patient data
         return (
-          <AddPatient type={"add"} patientDetails={this.state.patientDetails} />
+          <AddPatient
+            type={"add"}
+            setActionType={actionType => this.setActionType(actionType)}
+            savePatient={patientDetails => this.savePatient(patientDetails)}
+          />
         );
         break;
       }
 
       case "edit": {
-        // TODO: send selected patient data
         return (
           <AddPatient
             type={"edit"}
-            patientDetails={this.state.patientDetails}
+            patientDetails={this.state.patientDetails} // TODO: send selected patient data
+            setActionType={actionType => this.setActionType(actionType)}
           />
         );
         break;
       }
 
       case "delete": {
+        // API call to delete patient details
         // TODO: return popup to delete
         break;
       }
@@ -59,26 +78,16 @@ class PatientManagement extends React.Component {
     }
   };
 
-  setAddEditDelete = actionType => {
-    this.setState({
-      currentScreen: actionType
-    });
-  };
-
   render() {
     return (
       <Container fluid>
         <Row noGutters>
           <span className="body-title">Patient Management</span>
         </Row>
-        {this.state.currentScreen === "list" ? (
+        {this.state.currentAction === "list" && (
           <AddEditDeleteMenu
-            setAddEditDelete={this.setAddEditDelete.bind(this)}
+            setActionType={actionType => this.setActionType(actionType)}
           />
-        ) : (
-          <Button variant="dark" onClick={() => this.setAddEditDelete("list")}>
-            Back
-          </Button>
         )}
         {this.renderCurrentScreen()}
       </Container>

@@ -55,10 +55,11 @@ const AddDoctor = props => {
             </Form.Group>
           </Col>
         </Form.Group>
+
         <Button
           variant="secondary"
           className="form-button"
-          onClick={() => props.setAddEditDelete("list")}
+          onClick={() => props.setActionType("list")}
         >
           Cancel
         </Button>

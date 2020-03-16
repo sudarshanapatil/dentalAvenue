@@ -9,7 +9,7 @@ class DoctorManagement extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentScreen: "list", // ['list', 'add', 'edit', 'delete']
+      currentAction: "list", // ['list', 'add', 'edit', 'delete']
       doctorDetails: {
         name: "Neha Patil",
         qualification: "MDS",
@@ -18,14 +18,14 @@ class DoctorManagement extends React.Component {
     };
   }
 
-  setActionType = currentScreen => {
+  setActionType = actionType => {
     this.setState({
-      currentScreen
+      currentAction: actionType
     });
   };
 
   renderCurrentScreen = () => {
-    switch (this.state.currentScreen) {
+    switch (this.state.currentAction) {
       case "list": {
         return (
           <Row noGutters>
@@ -40,7 +40,7 @@ class DoctorManagement extends React.Component {
         return (
           <AddDoctor
             type={"add"}
-            setAddEditDelete={actionType => this.setAddEditDelete(actionType)}
+            setActionType={actionType => this.setActionType(actionType)}
           />
         );
         break;
@@ -52,7 +52,7 @@ class DoctorManagement extends React.Component {
           <AddDoctor
             type={"edit"}
             doctorDetails={this.state.doctorDetails}
-            setAddEditDelete={actionType => this.setAddEditDelete(actionType)}
+            setActionType={actionType => this.setActionType(actionType)}
           />
         );
         break;
@@ -68,21 +68,15 @@ class DoctorManagement extends React.Component {
     }
   };
 
-  setAddEditDelete = actionType => {
-    this.setState({
-      currentScreen: actionType
-    });
-  };
-
   render() {
     return (
       <Container fluid>
         <Row noGutters>
           <span className="body-title">Doctor Management</span>
         </Row>
-        {this.state.currentScreen === "list" && (
+        {this.state.currentAction === "list" && (
           <AddEditDeleteMenu
-            setAddEditDelete={actionType => this.setAddEditDelete(actionType)}
+            setActionType={actionType => this.setActionType(actionType)}
           />
         )}
         {this.renderCurrentScreen()}

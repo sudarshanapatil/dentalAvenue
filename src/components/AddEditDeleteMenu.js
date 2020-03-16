@@ -10,10 +10,7 @@ const AddEditDeleteMenu = props => {
           className="mr-2 add-edit-delete-menu-button"
           aria-label="First group"
         >
-          <Button
-            variant="primary"
-            onClick={() => props.setAddEditDelete("add")}
-          >
+          <Button variant="primary" onClick={() => props.setActionType("add")}>
             Add new
           </Button>
         </ButtonGroup>
@@ -22,10 +19,7 @@ const AddEditDeleteMenu = props => {
           className="mr-2 add-edit-delete-menu-buttons"
           aria-label="Second group"
         >
-          <Button
-            variant="success"
-            onClick={() => props.setAddEditDelete("edit")}
-          >
+          <Button variant="success" onClick={() => props.setActionType("edit")}>
             Edit
           </Button>
         </ButtonGroup>
@@ -33,7 +27,7 @@ const AddEditDeleteMenu = props => {
         <ButtonGroup aria-label="Third group" className="mr-2">
           <Button
             variant="danger"
-            onClick={() => props.setAddEditDelete("delete")}
+            onClick={() => props.setActionType("delete")}
           >
             Delete
           </Button>

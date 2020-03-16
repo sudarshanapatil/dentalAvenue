@@ -1,88 +1,98 @@
-import React, { useState } from 'react'
-import { Button, Form, Row, Col } from 'react-bootstrap'
+import React, { useState } from "react";
+import { Button, Form, Row, Col } from "react-bootstrap";
 
-function NewPatient () {
-  console.log('added')
+function NewPatient() {
+  console.log("added");
   return (
-    <Form className='newPatienForm'>
-      <Form.Group as={Row} controlId='formPlaintextPassword'>
-        <Form.Label column sm='2'>
+    <Form className="newPatienForm">
+      <Form.Group as={Row} controlId="formPlaintextPassword">
+        <Form.Label column md="4">
           Name
         </Form.Label>
-        <Col sm='10'>
-          <Form.Control type='text' placeholder='Enter Name' />
+        <Col md="8">
+          <Form.Control type="text" placeholder="Enter Name" />
         </Col>
       </Form.Group>
-      <Form.Group as={Row} controlId='formPlaintextEmail'>
-        <Form.Label column sm='2'>
+
+      <Form.Group as={Row} controlId="formPlaintextEmail">
+        <Form.Label column md="4">
           Email
         </Form.Label>
-        <Col sm='10'>
-          <Form.Control type='email' placeholder='Enter Email' />
+        <Col md="8">
+          <Form.Control type="email" placeholder="Enter Email" />
         </Col>
       </Form.Group>
 
-      <Form.Group as={Row} controlId='formPlaintextPassword'>
-        <Form.Label column sm='2'>
+      <Form.Group as={Row} controlId="formPlaintextPassword">
+        <Form.Label column md="4">
           Address
         </Form.Label>
-        <Col sm='10'>
-          <Form.Control as='textarea' rows='2' />
+        <Col md="8">
+          <Form.Control as="textarea" rows="2" />
         </Col>
       </Form.Group>
-      <Form.Row>
-        <Form.Group as={Col} controlId='formGridCity'>
-          <Form.Label>Age</Form.Label>
-          <Form.Control />
-        </Form.Group>
 
-        <Form.Group as={Col} controlId='formGridState'>
-          <Form.Label>Gender</Form.Label>
-          <Form.Control as='select'>
+      <Form.Group as={Row} controlId="formGridCity">
+        <Form.Label column md="4">
+          Age
+        </Form.Label>
+        <Col md="8">
+          <Form.Control />
+        </Col>
+      </Form.Group>
+
+      <Form.Group as={Row} controlId="formGridState">
+        <Form.Label column md="4">
+          Gender
+        </Form.Label>
+        <Col md="8">
+          <Form.Control as="select">
             <option>Choose...</option>
             <option>Male</option>
             <option>Female</option>
           </Form.Control>
-        </Form.Group>
-      </Form.Row>
-      <Form.Group as={Row} controlId='formPlaintextPassword'>
-        <Form.Label column sm='2'>
+        </Col>
+      </Form.Group>
+
+      <Form.Group as={Row} controlId="formPlaintextPassword">
+        <Form.Label column md="4">
           Past Dental History
         </Form.Label>
-        <Col sm='10'>
-          <Form.Control as='textarea' rows='2' />
+        <Col md="8">
+          <Form.Control as="textarea" rows="2" />
         </Col>
       </Form.Group>
-      <Form.Group as={Row} controlId='formPlaintextPassword'>
-        <Form.Label column sm='2'>
+
+      <Form.Group as={Row} controlId="formPlaintextPassword">
+        <Form.Label column md="4">
           Cheif Compaint
         </Form.Label>
-        <Col sm='10'>
-          <Form.Control as='textarea' rows='1' />
+        <Col md="8">
+          <Form.Control as="textarea" rows="1" />
         </Col>
       </Form.Group>
-      <Form.Group as={Row} controlId='formPlaintextPassword'>
-        <Form.Label column sm='2'>
+      <Form.Group as={Row} controlId="formPlaintextPassword">
+        <Form.Label column sm="2">
           Previous Dignosis
         </Form.Label>
-        <Col sm='10'>
-          <Form.Control as='textarea' rows='2' />
+        <Col sm="10">
+          <Form.Control as="textarea" rows="2" />
         </Col>
       </Form.Group>
-      <Form.Group as={Row} controlId='formPlaintextPassword'>
-        <Form.Label column sm='2'>
+      <Form.Group as={Row} controlId="formPlaintextPassword">
+        <Form.Label column sm="2">
           Provisional treatment plan
         </Form.Label>
-        <Col sm='10'>
-          <Form.Control as='textarea' rows='2' />
+        <Col sm="10">
+          <Form.Control as="textarea" rows="2" />
         </Col>
       </Form.Group>
-      <Form.Group as={Row} controlId='formPlaintextPassword'>
-        <Form.Label column sm='2'>
+      <Form.Group as={Row} controlId="formPlaintextPassword">
+        <Form.Label column sm="2">
           Occupation
         </Form.Label>
-        <Col sm='10'>
-          <Form.Control as='select'>
+        <Col sm="10">
+          <Form.Control as="select">
             <option>Choose...</option>
             <option>Student</option>
             <option>Service</option>
@@ -93,13 +103,13 @@ function NewPatient () {
         </Col>
       </Form.Group>
 
-      <Button variant='primary' type='submit'>
+      <Button variant="primary" type="submit">
         Cancel
       </Button>
-      <Button variant='primary' type='submit'>
+      <Button variant="primary" type="submit">
         Save
       </Button>
     </Form>
-  )
+  );
 }
-export default NewPatient
+export default NewPatient;
