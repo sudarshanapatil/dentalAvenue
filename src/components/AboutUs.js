@@ -1,6 +1,8 @@
 import React, { useState, Component } from "react";
 import "../App.css";
 import { Button, Col, Image, Card, Row, Container } from "react-bootstrap";
+import Navbar from "./Navbar";
+
 let drArr = [
   {
     img: require("./images/drPrashant.jpg"),
@@ -30,6 +32,7 @@ let drArr = [
 function AboutUs() {
   return (
     <Container fluid>
+      <Navbar />
       <Row className="aboutTitle">About Us</Row>
       <hr></hr>
       <Row className="aboutText">
