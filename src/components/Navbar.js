@@ -13,7 +13,7 @@ const Navbar = () => {
       </Col>
       <Col md={2}></Col>
       <Col md={1}>
-        <Link to="/HomeAdmin" className="navbar-link">
+        <Link to="/Home " className="navbar-link">
           <div className="navbar-item">Home</div>
         </Link>
       </Col>
