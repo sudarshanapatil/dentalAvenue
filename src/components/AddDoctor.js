@@ -1,43 +1,71 @@
 import React from "react";
-import { Container, Row,Col,Form,Button } from "react-bootstrap";
-import Navbar from "./Navbar";
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
 
-const AddDoctor = () => {
+import "../styles/AddDoctor.css";
+
+const AddDoctor = props => {
+  console.log(props);
+
   return (
-    <Row fluid className="containerHomeAdmin no-padding no-margin">
+    <Row className="containerHomeAdmin no-padding no-margin">
       <Form className="newPatienForm">
-      <Form.Group as={Row} controlId="formPlaintextPassword">
-        <Form.Label column sm="2">
-          Name
-        </Form.Label>
-        <Col sm="10">
-          <Form.Control type="text" placeholder="Enter Name" />
-        </Col>
-      </Form.Group>
-      <Form.Group as={Row} controlId="formPlaintextEmail">
-        <Form.Label column sm="2">
-          Qualification
-        </Form.Label>
-        <Col sm="10">
-          <Form.Control type="email" placeholder="Enter Email" />
-        </Col>
-      </Form.Group>
-      <Form.Group as={Row} controlId="formPlaintextPassword">
-        <Form.Label column sm="2">
-          Type
-        </Form.Label>
-        <Col sm="10">
-          <Form.Control as="textarea" rows="2" />
-        </Col>
-      </Form.Group>
-      <Button variant="primary" type="submit">
-        Cancel
-      </Button>
-      <Button variant="primary" type="submit">
-        Save
-      </Button>
-    </Form>
-      <span>doctor form</span>
+        <Form.Group as={Row} controlId="formPlaintextPassword">
+          <Form.Label column md="4">
+            Doctor's Name
+          </Form.Label>
+          <Col md="8">
+            <Form.Control
+              type="text"
+              placeholder={
+                props.type === "add"
+                  ? "Enter Doctor's Name"
+                  : props.doctorDetails.name || ""
+              }
+            />
+          </Col>
+        </Form.Group>
+        <Form.Group as={Row} controlId="formPlaintextEmail">
+          <Form.Label column md="4">
+            Doctor's Qualification
+          </Form.Label>
+          <Col md="8">
+            <Form.Group controlId="exampleForm.ControlSelect1">
+              <Form.Control as="select">
+                <option disabled>Select Qualification</option>
+                <option>MDS</option>
+                <option>Pedodontist</option>
+                <option>MBBS</option>
+                <option>4</option>
+                <option>5</option>
+              </Form.Control>
+            </Form.Group>
+          </Col>
+        </Form.Group>
+        <Form.Group as={Row} controlId="formPlaintextPassword">
+          <Form.Label column md="4">
+            Doctor's Type
+          </Form.Label>
+          <Col md="8">
+            <Form.Group controlId="exampleForm.ControlSelect2">
+              <Form.Control as="select">
+                <option disabled>Select Type</option>
+                <option>Permanent Doctor</option>
+                <option>Visiting Doctor</option>
+              </Form.Control>
+            </Form.Group>
+          </Col>
+        </Form.Group>
+        <Button
+          variant="secondary"
+          className="form-button"
+          onClick={() => props.setAddEditDelete("list")}
+        >
+          Cancel
+        </Button>
+        <Button variant="primary" type="submit" className="form-button">
+          Save
+        </Button>
+      </Form>
     </Row>
   );
 };

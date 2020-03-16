@@ -9,14 +9,18 @@ class DoctorManagement extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentScreen: "list" // ['list', 'add', 'edit', 'delete']
+      currentScreen: "list", // ['list', 'add', 'edit', 'delete']
+      doctorDetails: {
+        name: "Neha Patil",
+        qualification: "MDS",
+        type: "permanent"
+      }
     };
   }
 
   setActionType = currentScreen => {
     this.setState({
-      currentScreen,
-      doctorDetails: {}
+      currentScreen
     });
   };
 
@@ -34,7 +38,10 @@ class DoctorManagement extends React.Component {
       case "add": {
         // TODO: send selected doctor data
         return (
-          <AddDoctor type={"add"} doctorDetails={this.state.doctorDetails} />
+          <AddDoctor
+            type={"add"}
+            setAddEditDelete={actionType => this.setAddEditDelete(actionType)}
+          />
         );
         break;
       }
@@ -42,7 +49,11 @@ class DoctorManagement extends React.Component {
       case "edit": {
         // TODO: send selected doctor data
         return (
-          <AddDoctor type={"edit"} doctorDetails={this.state.doctorDetails} />
+          <AddDoctor
+            type={"edit"}
+            doctorDetails={this.state.doctorDetails}
+            setAddEditDelete={actionType => this.setAddEditDelete(actionType)}
+          />
         );
         break;
       }
@@ -69,14 +80,10 @@ class DoctorManagement extends React.Component {
         <Row noGutters>
           <span className="body-title">Doctor Management</span>
         </Row>
-        {this.state.currentScreen === "list" ? (
+        {this.state.currentScreen === "list" && (
           <AddEditDeleteMenu
-            setAddEditDelete={this.setAddEditDelete.bind(this)}
+            setAddEditDelete={actionType => this.setAddEditDelete(actionType)}
           />
-        ) : (
-          <Button variant="dark" onClick={() => this.setAddEditDelete("list")}>
-            Back
-          </Button>
         )}
         {this.renderCurrentScreen()}
       </Container>

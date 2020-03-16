@@ -49,8 +49,9 @@ const AboutUs = () => {
             <Card
               style={{
                 width: "18rem",
-                backgroundColor: "lightblue",
-                alignItems: "center"
+                backgroundColor: "#e7ffff",
+                alignItems: "center",
+                borderColor: "#e7ffff"
               }}
             >
               <Image
