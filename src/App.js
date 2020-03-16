@@ -6,6 +6,8 @@ import OldPatient from "./components/OldPatient";
 import Login from "./components/Login";
 import HomeAdmin from "./components/HomeAdmin";
 import ListTreatment from "./components/ListTreatment";
+import AddDoctor from "./components/AddDoctor";
+import AddPatient from "./components/AddPatient";
 import AddTreatment from "./components/AddTreatment";
 import ListPatient from "./components/ListPatient";
 import Navbar from "./components/Navbar";
@@ -45,6 +47,12 @@ function App() {
         </Route>
         <Route path="/ListTreatment">
           <ListTreatment />
+        </Route>
+        <Route exact path="/AddDoctor">
+          <AddDoctor />
+        </Route>
+        <Route path="/AddPatient">
+          <AddPatient />
         </Route>
         <Route path="/AddTreatment">
           <AddTreatment />

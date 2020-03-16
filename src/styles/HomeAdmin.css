@@ -1,0 +1,20 @@
+.no-padding {
+  padding: 0px !important;
+}
+
+.no-margin {
+  margin: 0px !important;
+}
+
+/* .nav-link {
+  color: #00ccff !important;
+}
+
+.nav-link:active::selection {
+  border-color: #00ccff !important;
+  background-color: #00ccff !important;
+} */
+
+.list-table {
+  margin: 1rem;
+}
