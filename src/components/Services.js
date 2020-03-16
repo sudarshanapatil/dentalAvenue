@@ -1,35 +1,36 @@
-import React, { Component } from 'react'
-import '../App.css'
-import { Button, Card, Container, Row, Col, Image } from 'react-bootstrap'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
-function Services () {
+import React, { Component } from "react";
+import "../App.css";
+import { Button, Card, Container, Row, Col, Image } from "react-bootstrap";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Navbar from "./Navbar";
+
+function Services() {
   return (
     <Container fluid>
-      <Row className='servicesTitle'>Case Studies</Row>
-      <Row className='serviceCaseStudy'>
-
-      <Row className='serviceImagesRow'>
-        <Col className='serviceImageCol'>
-          <Row className='serviceImageHeading'>Before Treatment</Row>
-          <Row className='serviceImageContainer'>
-            <Image
-              src={require('./images/services/before1.png')}
-              style={{ width: 300, height: 300 }}
-            />
-          </Row>
-        </Col>
-        <Col>
-          <Row className='serviceImageHeading'>After Treatment</Row>
-          <Row className='serviceImageContainer'>
-            <Image
-              src={require('./images/services/after1.png')}
-              style={{ width: 300, height: 300 }}
-            />
-          </Row>
-        </Col>
-      </Row>
-      <Row>
-      </Row>
+      <Navbar />
+      <Row className="servicesTitle">Case Studies</Row>
+      <Row className="serviceCaseStudy">
+        <Row className="serviceImagesRow">
+          <Col className="serviceImageCol">
+            <Row className="serviceImageHeading">Before Treatment</Row>
+            <Row className="serviceImageContainer">
+              <Image
+                src={require("./images/services/before1.png")}
+                style={{ width: 300, height: 300 }}
+              />
+            </Row>
+          </Col>
+          <Col>
+            <Row className="serviceImageHeading">After Treatment</Row>
+            <Row className="serviceImageContainer">
+              <Image
+                src={require("./images/services/after1.png")}
+                style={{ width: 300, height: 300 }}
+              />
+            </Row>
+          </Col>
+        </Row>
+        <Row></Row>
         <Card>
           <Card.Body>
             Every person has a winning feature of their personality which they
@@ -43,30 +44,28 @@ function Services () {
           </Card.Body>
         </Card>
       </Row>
-      <Row className='serviceCaseStudy'>
-
-      <Row className='serviceImagesRow'>
-        <Col className='serviceImageCol'>
-          <Row className='serviceImageHeading'>Before Treatment</Row>
-          <Row className='serviceImageContainer'>
-            <Image
-              src={require('./images/services/before1.png')}
-              style={{ width: 300, height: 300 }}
-            />
-          </Row>
-        </Col>
-        <Col>
-          <Row className='serviceImageHeading'>After Treatment</Row>
-          <Row className='serviceImageContainer'>
-            <Image
-              src={require('./images/services/after1.png')}
-              style={{ width: 300, height: 300 }}
-            />
-          </Row>
-        </Col>
-      </Row>
-      <Row>
-      </Row>
+      <Row className="serviceCaseStudy">
+        <Row className="serviceImagesRow">
+          <Col className="serviceImageCol">
+            <Row className="serviceImageHeading">Before Treatment</Row>
+            <Row className="serviceImageContainer">
+              <Image
+                src={require("./images/services/before1.png")}
+                style={{ width: 300, height: 300 }}
+              />
+            </Row>
+          </Col>
+          <Col>
+            <Row className="serviceImageHeading">After Treatment</Row>
+            <Row className="serviceImageContainer">
+              <Image
+                src={require("./images/services/after1.png")}
+                style={{ width: 300, height: 300 }}
+              />
+            </Row>
+          </Col>
+        </Row>
+        <Row></Row>
         <Card>
           <Card.Body>
             Every person has a winning feature of their personality which they
@@ -81,6 +80,6 @@ function Services () {
         </Card>
       </Row>
     </Container>
-  )
+  );
 }
-export default Services
+export default Services;

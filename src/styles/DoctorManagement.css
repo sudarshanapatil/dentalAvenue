@@ -1,0 +1,20 @@
+.body-title {
+  font-size: 1.8rem;
+  color: #00ccff !important;
+  padding: 1rem;
+}
+
+.body-button {
+  min-width: 12rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-size: 1.2rem;
+}
+
+/* .list-table tr {
+  font-size: 1.2rem;
+} */
+
+.list-table td {
+  font-size: 1.2rem;
+}

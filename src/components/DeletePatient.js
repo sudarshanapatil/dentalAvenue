@@ -1,5 +1,5 @@
-import React, { useState, Component } from 'react'
-import { Nav, Button, Form, Modal, Row, Col } from 'react-bootstrap'
+import React, { useState, Component } from "react";
+import { Nav, Button, Form, Modal, Row, Col } from "react-bootstrap";
 function DeletePatient() {
   const [show, setShow] = useState(true);
 
@@ -30,4 +30,4 @@ function DeletePatient() {
   );
 }
 
-export default DeletePatient
+export default DeletePatient;

@@ -1,39 +1,45 @@
-import { Button, ButtonToolbar, ButtonGroup, Col } from 'react-bootstrap'
-import React, { useState, Component } from 'react'
-class AddEditDeleteMenu extends Component {
-  render () {
-    return (
-      <div>
-        <ButtonToolbar aria-label='Toolbar with button groups'>
-          <ButtonGroup className='mr-2' size='lg' aria-label='First group'>
-            <Button
-              className='primary'
-              onClick={() => this.props.setAddEditDelete('Add')}
-            >
-              Add new
-            </Button>
-          </ButtonGroup>
+import React from "react";
+import { Button, ButtonToolbar, ButtonGroup, Row } from "react-bootstrap";
+import "../styles/AddEditDeleteMenu.css";
 
-          <ButtonGroup className='mr-2' aria-label='Second group'>
-            <Button
-              variant='warning'
-              onClick={() => this.props.setAddEditDelete('Edit')}
-            >
-              Edit
-            </Button>
-          </ButtonGroup>
+const AddEditDeleteMenu = props => {
+  return (
+    <Row noGutters className="add-edit-delete-menu">
+      <ButtonToolbar aria-label="Toolbar with button groups">
+        <ButtonGroup
+          className="mr-2 add-edit-delete-menu-button"
+          aria-label="First group"
+        >
+          <Button
+            variant="primary"
+            onClick={() => props.setAddEditDelete("add")}
+          >
+            Add new
+          </Button>
+        </ButtonGroup>
 
-          <ButtonGroup aria-label='Third group'>
-            <Button
-              variant='danger'
-              onClick={() => this.props.setAddEditDelete('Delete')}
-            >
-              Delete
-            </Button>
-          </ButtonGroup>
-        </ButtonToolbar>
-      </div>
-    )
-  }
-}
-export default AddEditDeleteMenu
+        <ButtonGroup
+          className="mr-2 add-edit-delete-menu-buttons"
+          aria-label="Second group"
+        >
+          <Button
+            variant="success"
+            onClick={() => props.setAddEditDelete("edit")}
+          >
+            Edit
+          </Button>
+        </ButtonGroup>
+
+        <ButtonGroup aria-label="Third group" className="mr-2">
+          <Button
+            variant="danger"
+            onClick={() => props.setAddEditDelete("delete")}
+          >
+            Delete
+          </Button>
+        </ButtonGroup>
+      </ButtonToolbar>
+    </Row>
+  );
+};
+export default AddEditDeleteMenu;

@@ -14,43 +14,31 @@ import AboutUs from './components/AboutUs'
 import Services from './components/Services'
 import ListPatientsTreatment from './components/ListPatientsTreatment'
 
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
-function App () {
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+function App() {
   return (
     <Router>
       {/* <Link to='/'>Home</Link> */}
       <Switch>
-        <Route exact path='/'>
+        {/* <Route exact path="/">
+          <Home />
+        </Route> */}
+        <Route exact path="/login">
           <Login />
         </Route>
-        <Route path='/NewPatient'>
+        <Route path="/NewPatient">
           <NewPatient />
         </Route>
-        <Route path='/ListPatient'>
-          <ListPatient />
-        </Route>
-        <Route path='/Navbar'>
-          <Navbar />
-        </Route>
-        <Route path='/Menubar'>
-          <Menubar />
-        </Route>
-        <Route path='/ExistingPatient'>
+        <Route path="/ExistingPatient">
           <OldPatient />
         </Route>
-        <Route path='/HomeAdmin'>
+        <Route exact path="/HomeAdmin">
           <HomeAdmin />
         </Route>
-        <Route path='/ListTreatment'>
-          <ListTreatment />
-        </Route>
-        <Route path='/AddTreatment'>
-          <AddTreatment />
-        </Route>
-        <Route path='/AboutUs'>
+        <Route path="/AboutUs">
           <AboutUs />
         </Route>
-        <Route path='/Services'>
+        <Route path="/Services">
           <Services />
         </Route>
         <Route path='/ListPatientsTreatment'>
@@ -59,7 +47,7 @@ function App () {
         
       </Switch>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,0 +1,8 @@
+.add-edit-delete-menu {
+  padding: 1rem;
+}
+
+.add-edit-delete-menu-buttons {
+  /* margin: 1rem; */
+  min-width: 200px !important;
+}

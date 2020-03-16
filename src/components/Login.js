@@ -1,36 +1,50 @@
-import React, { Component } from 'react'
-import '../App.css'
-import { Button, Form } from 'react-bootstrap'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
-function Login () {
+import React from "react";
+import { Button, Form, Container, Card } from "react-bootstrap";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import "../styles/Login.css";
+
+const Login = () => {
   return (
-    <div className='login-body'>
-      <div className='login-section'>
-        <div className='login-form-heading'>LOGIN</div>
-        <Form>
-          <Form.Group controlId='formBasicEmail'>
-            <Form.Label>Email address</Form.Label>
-            <Form.Control style={{width:510,height:50}}type='email' placeholder='Enter email' />
-          </Form.Group>
+    <Container fluid className="login-body">
+      <img src={require("../components/images/clinicMain.jpg")} />
+      <Card className="login-container">
+        <Card.Body>
+          <Card.Subtitle className="card-subtitle">Login</Card.Subtitle>
+          <hr className="login-title-hr" />
+          <Form style={{ textAlign: "start" }}>
+            <Form.Group controlId="formBasicEmail">
+              <Form.Control
+                type="email"
+                placeholder="Email Address"
+                className="login-control"
+              />
+            </Form.Group>
+            <Form.Group controlId="formBasicEmail">
+              <Form.Control
+                type="password"
+                placeholder="Password"
+                className="login-control"
+              />
+            </Form.Group>
+            <Form.Group controlId="formBasicEmail">
+              <Link to="/HomeAdmin" className="login-button-link">
+                <Button
+                  variant="primary"
+                  type="submit"
+                  className="login-button"
+                >
+                  Login
+                </Button>
+              </Link>
+            </Form.Group>
+            <Link to="/HomeAdmin" className="login-button-link-2">
+              Forgot Password?
+            </Link>
+          </Form>
+        </Card.Body>
+      </Card>
+    </Container>
+  );
+};
 
-          <Form.Group controlId='formBasicPassword'>
-            <Form.Label>Password</Form.Label>
-            <Form.Control style={{width:510,height:50}} type='password' placeholder='Password' />
-          </Form.Group>
-          <Form.Group controlId='formBasicCheckbox'>
-            <Form.Check  type='checkbox' label='Check me out' />
-          </Form.Group>
-
-          <Button variant='warning' type='submit' style={{width:510}}>
-            <Link to='/HomeAdmin'>Login</Link>
-          </Button>
-
-          <Button variant='warning' type='submit' style={{width:510}}>
-            <Link to='/HomeAdmin'>Register</Link>
-          </Button>
-        </Form>
-      </div>
-    </div>
-  )
-}
-export default Login
+export default Login;
