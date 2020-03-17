@@ -51,13 +51,13 @@ class DoctorManagement extends React.Component {
         qualification: "Prostodontist"
       },
       {
-        id: 3,
+        id: 4,
         name: "Dr. Jitendra Patil",
         type: "Visting",
         qualification: "Pedodontist"
       },
       {
-        id: 3,
+        id: 5,
         name: "Dr. Varsha Patil",
         type: "Visting",
         qualification: "Pedodontist"
