@@ -27,7 +27,7 @@ const Login = () => {
               />
             </Form.Group>
             <Form.Group controlId="formBasicEmail">
-              <Link to="/HomeAdmin" className="login-button-link">
+              <Link to="/HomeDoctor" className="login-button-link">
                 <Button
                   variant="primary"
                   type="submit"

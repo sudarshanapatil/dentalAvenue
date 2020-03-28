@@ -8,6 +8,7 @@ class PatientManagement extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      patientsData: [],
       currentAction: "list", // ['list', 'add', 'edit', 'delete']
       patientDetails: {
         name: "",
@@ -24,6 +25,15 @@ class PatientManagement extends React.Component {
     };
   }
 
+  componentDidMount() {
+    fetch('http://www.mocky.io/v2/5e7f1ac92f00006600bac26b')
+      .then(res => { return res.json() })
+      .then(result => {
+        console.log(result)
+        this.setState({patientsData:result})
+      })
+      .catch(err => { console.log(err) })
+  }
   savePatient = patientDetails => {
     // API call to save patient details
   };
@@ -39,7 +49,7 @@ class PatientManagement extends React.Component {
       case "list": {
         return (
           <Row noGutters>
-            <ListPatient />
+            <ListPatient patientsData={this.state.patientsData} />
           </Row>
         );
         break;
@@ -79,6 +89,7 @@ class PatientManagement extends React.Component {
   };
 
   render() {
+    console.log("in render")
     return (
       <Container fluid>
         <Row noGutters>

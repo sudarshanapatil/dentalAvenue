@@ -1,26 +1,28 @@
 import { Button, Table, Row, Col } from "react-bootstrap";
 import React, { useState } from "react";
-function ListPatient() {
-  let treatments = [
-    {
-      name: "Nishigandha Waad",
-      age: 23,
-      address: "Panvel",
-      sex: "M"
-    },
-    {
-      name: "Alaka Kubal",
-      age: 23,
-      address: "Rasayani",
-      sex: "M"
-    },
-    {
-      name: "Nishigandha Waad",
-      age: 23,
-      address: "Panvel",
-      sex: "M"
-    }
-  ];
+const ListPatient = props => {
+  let treatments =props.patientsData
+  console.log(treatments,"trat")
+  // let treatments = [
+  //   {
+  //     name: "Nishigandha Waad",
+  //     age: 23,
+  //     address: "Panvel",
+  //     sex: "M"
+  //   },
+  //   {
+  //     name: "Alaka Kubal",
+  //     age: 23,
+  //     address: "Rasayani",
+  //     sex: "M"
+  //   },
+  //   {
+  //     name: "Nishigandha Waad",
+  //     age: 23,
+  //     address: "Panvel",
+  //     sex: "M"
+  //   }
+  // ];
   return (
     <Table
       striped
