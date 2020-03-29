@@ -19,8 +19,8 @@ const ListTreatment = props => {
         </tr>
       </thead>
       <tbody>
-        {props.treatmentsList.map(treatment => (
-          <tr>
+        {props.treatmentsList.map((treatment, index) => (
+          <tr key={index}>
             <td>{treatment.name}</td>
             <td>{treatment.cost}</td>
           </tr>

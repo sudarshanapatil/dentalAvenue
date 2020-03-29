@@ -24,17 +24,18 @@ class PatientManagement extends React.Component {
       }
     };
   }
-
+  
   componentDidMount() {
     fetch('http://www.mocky.io/v2/5e7f1ac92f00006600bac26b')
       .then(res => { return res.json() })
       .then(result => {
         console.log(result)
-        this.setState({patientsData:result})
+        this.setState({ patientsData: result })
       })
       .catch(err => { console.log(err) })
   }
-  savePatient = patientDetails => {
+  savePatientDetails = patientDetails => {
+    console.log(patientDetails,"in parent")
     // API call to save patient details
   };
 
@@ -60,7 +61,7 @@ class PatientManagement extends React.Component {
           <AddPatient
             type={"add"}
             setActionType={actionType => this.setActionType(actionType)}
-            savePatient={patientDetails => this.savePatient(patientDetails)}
+            savePatientDetails={patientDetails => this.savePatientDetails(patientDetails)}
           />
         );
         break;
@@ -89,7 +90,6 @@ class PatientManagement extends React.Component {
   };
 
   render() {
-    console.log("in render")
     return (
       <Container fluid>
         <Row noGutters>
