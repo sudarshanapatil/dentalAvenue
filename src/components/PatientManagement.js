@@ -3,6 +3,7 @@ import { Container, Row, Button } from "react-bootstrap";
 import AddEditDeleteMenu from "./AddEditDeleteMenu";
 import ListPatient from "./ListPatient";
 import AddPatient from "./AddPatient";
+import ListPatientsTreatment from './ListPatientsTreatment'
 
 class PatientManagement extends React.Component {
   constructor(props) {
@@ -36,7 +37,17 @@ class PatientManagement extends React.Component {
   }
   savePatientDetails = patientDetails => {
     console.log(patientDetails,"in parent")
+    
+    this.setState({currentAction:"showPatientTreatments"})
+    // fetch('http://www.mocky.io/v2/5e7f1ac92f00006600bac26b')
+    //   .then(res => { return res.json() })
+    //   .then(result => {
+    //     console.log(result)
+    //     this.setState({ patientsData: result })
+    //   })
+    //   .catch(err => { console.log(err) })
     // API call to save patient details
+
   };
 
   setActionType = actionType => {
@@ -83,6 +94,13 @@ class PatientManagement extends React.Component {
         // TODO: return popup to delete
         break;
       }
+      case "showPatientTreatments": {
+        return(<ListPatientsTreatment />)
+        // API call to delete patient details
+        // TODO: return popup to delete
+        break;
+      }
+
 
       default:
         break;

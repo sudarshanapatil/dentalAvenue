@@ -6,7 +6,7 @@ import Navbar from './Navbar'
 function CurrentUser () {
   return (
     <Container fluid>
-    <Navbar />
+    {/* <Navbar /> */}
     <Row className='currentUserContainer'>
       <Col xs={3}>
         <div className='Row'>Sudarshana Patil</div>
