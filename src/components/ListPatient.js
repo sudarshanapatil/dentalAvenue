@@ -1,5 +1,5 @@
-import { Button, Table, Row, Col } from "react-bootstrap";
-import React, { useState } from "react";
+import { Table } from "react-bootstrap";
+import React from "react";
 const ListPatient = props => {
   let treatments = props.patientsData
 

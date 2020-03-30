@@ -1,7 +1,7 @@
-import { Button, Table, Row, Col, Image, Container } from 'react-bootstrap'
-import React, { useState } from 'react'
+import {  Row, Col, Image, Container } from 'react-bootstrap'
+import React from 'react'
 import '../styles/CurrentUser.css'
-import Navbar from './Navbar'
+// import Navbar from './Navbar'
 
 function CurrentUser () {
   return (

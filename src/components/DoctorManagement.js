@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Button } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import AddEditDeleteMenu from "./AddEditDeleteMenu";
 import ListDoctor from "./ListDoctor";
 import AddDoctor from "./AddDoctor";
@@ -82,7 +82,6 @@ class DoctorManagement extends React.Component {
             <ListDoctor doctorsList={this.state.doctorsList} />
           </Row>
         );
-        break;
       }
 
       case "add": {
@@ -93,7 +92,6 @@ class DoctorManagement extends React.Component {
             setActionType={actionType => this.setActionType(actionType)}
           />
         );
-        break;
       }
 
       case "edit": {
@@ -105,7 +103,6 @@ class DoctorManagement extends React.Component {
             setActionType={actionType => this.setActionType(actionType)}
           />
         );
-        break;
       }
 
       case "delete": {

@@ -1,4 +1,4 @@
-import React, { useState, Component } from "react";
+import React from "react";
 import "../App.css";
 import { Button, Col, Image, Card, Row, Container } from "react-bootstrap";
 import "../styles/AboutUs.css";

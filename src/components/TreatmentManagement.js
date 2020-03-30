@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Button } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import AddEditDeleteMenu from "./AddEditDeleteMenu";
 import ListTreatment from "./ListTreatment";
 import AddTreatment from "./AddTreatment";
@@ -46,7 +46,6 @@ class TreatmentManagement extends React.Component {
             <ListTreatment treatmentsList={this.state.treatmentsList} />
           </Row>
         );
-        break;
       }
 
       case "add": {
@@ -58,7 +57,6 @@ class TreatmentManagement extends React.Component {
             setActionType={actionType => this.setActionType(actionType)}
           />
         );
-        break;
       }
 
       case "edit": {
@@ -70,7 +68,6 @@ class TreatmentManagement extends React.Component {
             setActionType={actionType => this.setActionType(actionType)}
           />
         );
-        break;
       }
 
       case "delete": {

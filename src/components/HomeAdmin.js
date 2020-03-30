@@ -1,4 +1,4 @@
-import React, { useState, Component } from "react";
+import React  from "react";
 import { Nav, Container, Row, Col, Tab } from "react-bootstrap";
 import Navbar from "./Navbar";
 import DoctorManagement from "./DoctorManagement";
@@ -7,7 +7,7 @@ import TreatmentManagement from "./TreatmentManagement";
 
 import "../styles/HomeAdmin.css";
 
-class HomeAdmin extends Component {
+class HomeAdmin extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

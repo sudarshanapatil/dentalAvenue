@@ -1,14 +1,13 @@
-import React, { useState, Component } from "react";
+import React from "react";
 import { Nav, Container, Row, Col, Tab } from "react-bootstrap";
 import Navbar from "./Navbar";
 
-import DoctorManagement from "./DoctorManagement";
 import PatientManagement from "./PatientManagement";
 import TreatmentManagement from "./TreatmentManagement";
 
 import "../styles/HomeAdmin.css";
 
-class HomeDoctor extends Component {
+class HomeDoctor extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

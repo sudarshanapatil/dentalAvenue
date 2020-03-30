@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Form, Container, Card } from "react-bootstrap";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {  Link } from "react-router-dom";
 import "../styles/Login.css";
 
 const Login = () => {

@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import "../styles/Navbar.css";
-import { Button, Form, Container, Row, Col, Image } from "react-bootstrap";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Row, Col, } from "react-bootstrap";
+import {  Link } from "react-router-dom";
 
 const Navbar = () => {
   return (

@@ -1,16 +1,15 @@
-import { Button, Table, Row, Col, Container, FormControl, InputGroup, DropdownButton, Dropdown } from 'react-bootstrap'
-import React, { useState, Component } from 'react'
-import AddEditDeleteMenu from './AddEditDeleteMenu'
+import { Button, Table, Row, Container, FormControl, InputGroup } from 'react-bootstrap'
+import React from 'react'
+// import AddEditDeleteMenu from './AddEditDeleteMenu'
 import CurrentUser from './CurrentUser'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
-import { render } from '@testing-library/react'
 
-class ListPaientsTreatment extends Component {
+class ListPaientsTreatment extends React.Component {
   constructor(props) {
     super(props)
     let patientId = this.props.patientId;
-    console.log(patientId, "patientId")
+    console.log(patientId, "patientId", props)
     this.state = {
       startDate: new Date(),
       patientsTreatments: [],
@@ -59,38 +58,40 @@ class ListPaientsTreatment extends Component {
               </tr>
             </thead>
             <tbody>
-              <td>
-                <DatePicker showTimeSelect
-                  selected={this.state.startDate}
-                  onChange={this.handleChange}
-                  timeClassName={this.handleColor}
-                />
-              </td>
-              <td><InputGroup className="mb-3">
-                <FormControl as="select" custom>
-                  {
-                    this.state.treatments.map(key => <option>{key.name}</option>)
-                  }
-                </FormControl>
-                <FormControl aria-describedby="basic-addon1" />
-              </InputGroup></td>
-              <td><FormControl
-                placeholder="aad amount"
-                aria-label="Username"
-                aria-describedby="basic-addon1" />
-              </td>
-              <td><FormControl
-                placeholder="aad amount"
-                aria-label="Username"
-                aria-describedby="basic-addon1" />
-              </td>
-              <td><FormControl
-                placeholder="aad amount"
-                aria-label="Username"
-                aria-describedby="basic-addon1" />
-              </td>
-              <td><input type="file" name="file" /></td>
-              {(this.state.patientsTreatments.length != 0) && this.state.patientsTreatments.map((treatment, index) => (
+              <tr>
+                <td>
+                  <DatePicker showTimeSelect
+                    selected={this.state.startDate}
+                    onChange={this.handleChange}
+                    timeClassName={this.handleColor}
+                  />
+                </td>
+                <td><InputGroup className="mb-3">
+                  <FormControl as="select" >
+                    {
+                      this.state.treatments.map((key, index) => <option key={index}>{key.name}</option>)
+                    }
+                  </FormControl>
+                  <FormControl aria-describedby="basic-addon1" />
+                </InputGroup></td>
+                <td><FormControl
+                  placeholder="aad amount"
+                  aria-label="Username"
+                  aria-describedby="basic-addon1" />
+                </td>
+                <td><FormControl
+                  placeholder="aad amount"
+                  aria-label="Username"
+                  aria-describedby="basic-addon1" />
+                </td>
+                <td><FormControl
+                  placeholder="aad amount"
+                  aria-label="Username"
+                  aria-describedby="basic-addon1" />
+                </td>
+                <td><input type="file" name="file" /></td>
+              </tr>
+              {(this.state.patientsTreatments.length !== 0) && this.state.patientsTreatments.map((treatment, index) => (
                 <tr key={index}>
                   <td>
                     <DatePicker showTimeSelect
@@ -107,17 +108,17 @@ class ListPaientsTreatment extends Component {
                 </tr>
               ))}
 
-              {(this.state.patientsTreatments.length == 0) && <tr>NO previous treatment</tr>}
+              {(this.state.patientsTreatments.length === 0) && <tr><td>NO previous treatment</td></tr>}
             </tbody>
           </Table>
         </Row>
         <Row>
-          <Button>
+          <Button >
             Save Details
           </Button>
-          <Button>
+          {/* <Button onClick={this.props.setActionType('generateInvoice',this.state.patientsTreatments)}>
             Generate Invoice
-          </Button>
+          </Button> */}
         </Row>
       </Container>
     )

@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Button, Table, Row, Col } from 'react-bootstrap'
+import React from 'react'
+import { Table } from 'react-bootstrap'
 function OldPatient () {
   let previousTreatment = [
     {

@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import "../App.css";
-import { Button, Card, Container, Row, Col, Image } from "react-bootstrap";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {  Card, Container, Row, Col, Image } from "react-bootstrap";
+// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Navbar from "./Navbar";
 
 function Services() {

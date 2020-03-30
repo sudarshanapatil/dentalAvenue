@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { Row, Col, Form, Button } from "react-bootstrap";
 class AddPatient extends React.Component {
   constructor(props) {
     super(props)
@@ -24,11 +24,9 @@ class AddPatient extends React.Component {
   }
   handleSubmit(event) {
     event.preventDefault();
-    console.log(this.state, "form")
   }
   render() {
-    console.log(this.props,"props")
-    let patientDetails = {}; // TO CHECK: may need to make stateful due to form changes
+
     return (
       <Form className="newPatienForm" onSubmit={this.handleSubmit}>
         <Form.Group as={Row} controlId="formPlaintextPassword">
@@ -36,10 +34,10 @@ class AddPatient extends React.Component {
             Name
         </Form.Label>
           <Col md="8">
-            <Form.Control type="text" 
-            name="name"
-            onChange={this.handleChange}
-            placeholder="Enter Name" />
+            <Form.Control type="text"
+              name="name"
+              onChange={this.handleChange}
+              placeholder="Enter Name" />
           </Col>
         </Form.Group>
 
@@ -48,10 +46,10 @@ class AddPatient extends React.Component {
             Email
         </Form.Label>
           <Col md="8">
-            <Form.Control type="email" 
-            name="email"
-            onChange={this.handleChange}
-            placeholder="Enter Email" />
+            <Form.Control type="email"
+              name="email"
+              onChange={this.handleChange}
+              placeholder="Enter Email" />
           </Col>
         </Form.Group>
 
@@ -60,10 +58,10 @@ class AddPatient extends React.Component {
             Address
         </Form.Label>
           <Col md="8">
-            <Form.Control as="textarea" 
-            name="address"
-            onChange={this.handleChange}
-            rows="2" />
+            <Form.Control as="textarea"
+              name="address"
+              onChange={this.handleChange}
+              rows="2" />
           </Col>
         </Form.Group>
 
@@ -72,9 +70,9 @@ class AddPatient extends React.Component {
             Age
         </Form.Label>
           <Col md="8">
-            <Form.Control 
-            name="age"
-            onChange={this.handleChange}/>
+            <Form.Control
+              name="age"
+              onChange={this.handleChange} />
           </Col>
         </Form.Group>
 
@@ -84,8 +82,8 @@ class AddPatient extends React.Component {
         </Form.Label>
           <Col md="8">
             <Form.Control as="select"
-            name="gender"
-            onChange={this.handleChange}
+              name="gender"
+              onChange={this.handleChange}
             >
               <option>Choose...</option>
               <option>Male</option>
@@ -99,9 +97,9 @@ class AddPatient extends React.Component {
             Past Dental History
         </Form.Label>
           <Col md="8">
-            <Form.Control as="textarea" rows="2" 
-            name="pastDentalHistory"
-            onChange={this.handleChange}/>
+            <Form.Control as="textarea" rows="2"
+              name="pastDentalHistory"
+              onChange={this.handleChange} />
           </Col>
         </Form.Group>
 
@@ -110,9 +108,9 @@ class AddPatient extends React.Component {
             Cheif Compaint
         </Form.Label>
           <Col md="8">
-            <Form.Control as="textarea" rows="1" 
-            name="chiefComplaint"
-            onChange={this.handleChange}/>
+            <Form.Control as="textarea" rows="1"
+              name="chiefComplaint"
+              onChange={this.handleChange} />
           </Col>
         </Form.Group>
         <Form.Group as={Row} controlId="formPlaintextPassword">
@@ -121,8 +119,8 @@ class AddPatient extends React.Component {
         </Form.Label>
           <Col md="8">
             <Form.Control as="textarea" rows="2"
-            name="previousDiagnosis"
-            onChange={this.handleChange} />
+              name="previousDiagnosis"
+              onChange={this.handleChange} />
           </Col>
         </Form.Group>
         <Form.Group as={Row} controlId="formPlaintextPassword">
@@ -130,9 +128,9 @@ class AddPatient extends React.Component {
             Provisional treatment plan
         </Form.Label>
           <Col md="8">
-            <Form.Control as="textarea" rows="2" 
-            name="provisionalTreatmentPlan"
-            onChange={this.handleChange}/>
+            <Form.Control as="textarea" rows="2"
+              name="provisionalTreatmentPlan"
+              onChange={this.handleChange} />
           </Col>
         </Form.Group>
         <Form.Group as={Row} controlId="formPlaintextPassword">
@@ -141,8 +139,8 @@ class AddPatient extends React.Component {
         </Form.Label>
           <Col md="8">
             <Form.Control as="select"
-            name="occupation"
-            onChange={this.handleChange}>
+              name="occupation"
+              onChange={this.handleChange}>
               <option>Choose...</option>
               <option>Student</option>
               <option>Service</option>
@@ -164,7 +162,7 @@ class AddPatient extends React.Component {
           variant="primary"
           type="submit"
           className="form-button"
-           onClick={() => this.props.savePatientDetails(this.state)}
+          onClick={() => this.props.savePatientDetails(this.state)}
         >
           Save
       </Button>

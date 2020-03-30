@@ -1,16 +1,18 @@
 import React from "react";
-import { Container, Row, Button } from "react-bootstrap";
+import { Container, Row, } from "react-bootstrap";
 import AddEditDeleteMenu from "./AddEditDeleteMenu";
 import ListPatient from "./ListPatient";
 import AddPatient from "./AddPatient";
 import ListPatientsTreatment from './ListPatientsTreatment'
+// import GenerateInvoice from './GenerateInvoice'
 
 class PatientManagement extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      patientId:0,
+      patientId: 0,
       patientsData: [],
+      invoiceData: [],
       currentAction: "list", // ['list', 'add', 'edit', 'delete']
       patientDetails: {
         name: "",
@@ -26,7 +28,7 @@ class PatientManagement extends React.Component {
       }
     };
   }
-  
+
   componentDidMount() {
     fetch('http://www.mocky.io/v2/5e7f1ac92f00006600bac26b')
       .then(res => { return res.json() })
@@ -37,10 +39,10 @@ class PatientManagement extends React.Component {
       .catch(err => { console.log(err) })
   }
   savePatientDetails = patientDetails => {
-    console.log(patientDetails,"in parent")
     
-    this.setState({currentAction:"showPatientTreatments",patientId:121})
- 
+
+    this.setState({ currentAction: "showPatientTreatments", patientId: 121 })
+    console.log(this.state.currentAction,"saved detals for patient call list")
     //TODO:After API call u will get patient ID
     // fetch('http://www.mocky.io/v2/5e7f1ac92f00006600bac26b')
     //   .then(res => { return res.json() })
@@ -53,7 +55,8 @@ class PatientManagement extends React.Component {
 
   };
 
-  setActionType = actionType => {
+  setActionType = (actionType, invoiceData) => {
+    console.log(invoiceData, "parentIn",actionType)
     this.setState({
       currentAction: actionType
     });
@@ -67,7 +70,7 @@ class PatientManagement extends React.Component {
             <ListPatient patientsData={this.state.patientsData} />
           </Row>
         );
-        break;
+      
       }
 
       case "add": {
@@ -78,7 +81,7 @@ class PatientManagement extends React.Component {
             savePatientDetails={patientDetails => this.savePatientDetails(patientDetails)}
           />
         );
-        break;
+    
       }
 
       case "edit": {
@@ -89,16 +92,19 @@ class PatientManagement extends React.Component {
             setActionType={actionType => this.setActionType(actionType)}
           />
         );
-        break;
-      }
-
-      case "delete": {
-        // API call to delete patient details
-        // TODO: return popup to delete
-        break;
+    
       }
       case "showPatientTreatments": {
-        return(<ListPatientsTreatment patientId={this.state.patientId}/>)
+        return (<ListPatientsTreatment
+          setActionType={actionType => this.setActionType(actionType)}
+          patientId={this.state.patientId} />)
+       
+      }
+      // case "generateInvoice": {
+      //   return (<GenerateInvoice invoiceData={this.state.invoiceData} />)
+      //   break;
+      // }
+      case "delete": {
         // API call to delete patient details
         // TODO: return popup to delete
         break;
