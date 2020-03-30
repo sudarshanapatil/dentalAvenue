@@ -1,4 +1,4 @@
-import { Button, Table, Row, Col, Container } from 'react-bootstrap'
+import { Button, Table, Row, Col, Container, FormControl, InputGroup, DropdownButton, Dropdown } from 'react-bootstrap'
 import React, { useState, Component } from 'react'
 import AddEditDeleteMenu from './AddEditDeleteMenu'
 import CurrentUser from './CurrentUser'
@@ -7,10 +7,13 @@ import 'react-datepicker/dist/react-datepicker.css'
 import { render } from '@testing-library/react'
 
 class ListPaientsTreatment extends Component {
-  constructor () {
-    super()
+  constructor(props) {
+    super(props)
+    let patientId = this.props.patientId;
+    console.log(patientId, "patientId")
     this.state = {
-      startDate: new Date()
+      startDate: new Date(),
+      treatments: []
     }
   }
   handleChange = date => {
@@ -20,25 +23,19 @@ class ListPaientsTreatment extends Component {
   handleColor = time => {
     return time.getHours() > 12 ? "text-success" : "text-error";
   };
-  render () {
-    // console.log(this.state.startDate, 'date')
-    let treatments = [
-      {
-        main: 'X-Ray',
-        sub: '',
-        cost: 2000
-      },
-      {
-        main: 'X-Ray',
-        sub: 'j',
-        cost: 2000
-      },
-      {
-        main: 'X-Ray',
-        sub: '',
-        cost: 2000
-      }
-    ]
+
+  componentDidMount() {
+    fetch('http://www.mocky.io/v2/5e818aac30000049006f9802')
+      .then(res => res.json())
+      .then(result => {
+        console.log(result, "API treatment")
+        this.setState({ treatments: [] })
+      })
+      .catch(err => console.log(err))
+
+  }
+  render() {
+    // console.log(this.
     return (
       <Container fluid>
         <CurrentUser />
@@ -55,8 +52,41 @@ class ListPaientsTreatment extends Component {
               </tr>
             </thead>
             <tbody>
-              {treatments.map(treatment => (
-                <tr>
+              <td>
+                <DatePicker showTimeSelect
+                  selected={this.state.startDate}
+                  onChange={this.handleChange}
+                  timeClassName={this.handleColor}
+                />
+              </td>
+              <td><InputGroup className="mb-3">
+                <FormControl as="select" custom>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </FormControl>
+                <FormControl aria-describedby="basic-addon1" />
+              </InputGroup></td>
+              <td><FormControl
+                placeholder="aad amount"
+                aria-label="Username"
+                aria-describedby="basic-addon1" />
+              </td>
+              <td><FormControl
+                placeholder="aad amount"
+                aria-label="Username"
+                aria-describedby="basic-addon1" />
+              </td>
+              <td><FormControl
+                placeholder="aad amount"
+                aria-label="Username"
+                aria-describedby="basic-addon1" />
+              </td>
+              <td><input type="file" name="file" /></td>
+              {(this.state.treatments.length != 0) && this.state.treatments.map((treatment, index) => (
+                <tr key={index}>
                   <td>
                     <DatePicker showTimeSelect
                       selected={this.state.startDate}
@@ -71,6 +101,8 @@ class ListPaientsTreatment extends Component {
                   <td><input type="file" name="file" /></td>
                 </tr>
               ))}
+
+              {<tr>NO previous treatment</tr>}
             </tbody>
           </Table>
         </Row>

@@ -9,6 +9,7 @@ class PatientManagement extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      patientId:0,
       patientsData: [],
       currentAction: "list", // ['list', 'add', 'edit', 'delete']
       patientDetails: {
@@ -38,7 +39,9 @@ class PatientManagement extends React.Component {
   savePatientDetails = patientDetails => {
     console.log(patientDetails,"in parent")
     
-    this.setState({currentAction:"showPatientTreatments"})
+    this.setState({currentAction:"showPatientTreatments",patientId:121})
+ 
+    //TODO:After API call u will get patient ID
     // fetch('http://www.mocky.io/v2/5e7f1ac92f00006600bac26b')
     //   .then(res => { return res.json() })
     //   .then(result => {
@@ -95,7 +98,7 @@ class PatientManagement extends React.Component {
         break;
       }
       case "showPatientTreatments": {
-        return(<ListPatientsTreatment />)
+        return(<ListPatientsTreatment patientId={this.state.patientId}/>)
         // API call to delete patient details
         // TODO: return popup to delete
         break;
