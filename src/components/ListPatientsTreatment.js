@@ -13,6 +13,7 @@ class ListPaientsTreatment extends Component {
     console.log(patientId, "patientId")
     this.state = {
       startDate: new Date(),
+      patientsTreatments: [],
       treatments: []
     }
   }
@@ -29,7 +30,13 @@ class ListPaientsTreatment extends Component {
       .then(res => res.json())
       .then(result => {
         console.log(result, "API treatment")
-        this.setState({ treatments: [] })
+        this.setState({ patientsTreatments: result })
+      })
+      .catch(err => console.log(err))
+    fetch('http://www.mocky.io/v2/5e819608300000bb386f9853')
+      .then(res => res.json())
+      .then(result => {
+        this.setState({ treatments: result })
       })
       .catch(err => console.log(err))
 
@@ -61,11 +68,9 @@ class ListPaientsTreatment extends Component {
               </td>
               <td><InputGroup className="mb-3">
                 <FormControl as="select" custom>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
+                  {
+                    this.state.treatments.map(key => <option>{key.name}</option>)
+                  }
                 </FormControl>
                 <FormControl aria-describedby="basic-addon1" />
               </InputGroup></td>
@@ -85,7 +90,7 @@ class ListPaientsTreatment extends Component {
                 aria-describedby="basic-addon1" />
               </td>
               <td><input type="file" name="file" /></td>
-              {(this.state.treatments.length != 0) && this.state.treatments.map((treatment, index) => (
+              {(this.state.patientsTreatments.length != 0) && this.state.patientsTreatments.map((treatment, index) => (
                 <tr key={index}>
                   <td>
                     <DatePicker showTimeSelect
@@ -102,7 +107,7 @@ class ListPaientsTreatment extends Component {
                 </tr>
               ))}
 
-              {<tr>NO previous treatment</tr>}
+              {(this.state.patientsTreatments.length == 0) && <tr>NO previous treatment</tr>}
             </tbody>
           </Table>
         </Row>

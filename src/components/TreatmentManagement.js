@@ -20,64 +20,13 @@ class TreatmentManagement extends React.Component {
 
   getTreatmentsList = () => {
     // API call to get treatments list
-    let treatments = [
-      {
-        name: "OPD",
-        cost: 2000
-      },
-      {
-        name: "X-Ray",
-        cost: 2000
-      },
-      {
-        name: "Scaling/Cleaning",
-        cost: 2000
-      },
-      {
-        name: "Filling",
-        cost: 2000
-      },
-      {
-        name: "Root canel treatment",
-        cost: 2000
-      },
-      {
-        name: "Post and core",
-        cost: 2000
-      },
-      {
-        name: "Extraction",
-        cost: 2000
-      },
-      {
-        name: "Bridge",
-        cost: 2000
-      },
-      {
-        name: "Crown",
-        cost: 2000
-      },
-      {
-        name: "Implant",
-        cost: 2000
-      },
-      {
-        name: "Removable partial denture",
-        cost: 2000
-      },
-      {
-        name: "Complete Denture",
-        cost: 2000
-      },
-      {
-        name: "Perio surgery",
-        cost: 2000
-      },
-      {
-        name: "Space maintainer",
-        cost: 2000
-      }
-    ];
+    fetch('http://www.mocky.io/v2/5e819608300000bb386f9853')
+      .then(res => res.json())
+      .then(result => {
+        this.setState({ treatmentsList: result })
+      })
+      .catch(err => console.log(err))
+    let treatments = [];
     this.setState({
       treatmentsList: treatments
     });
