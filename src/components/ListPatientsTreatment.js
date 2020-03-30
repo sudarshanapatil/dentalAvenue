@@ -41,7 +41,6 @@ class ListPaientsTreatment extends React.Component {
 
   }
   render() {
-    // console.log(this.
     return (
       <Container fluid>
         <CurrentUser />
@@ -116,9 +115,9 @@ class ListPaientsTreatment extends React.Component {
           <Button >
             Save Details
           </Button>
-          {/* <Button onClick={this.props.setActionType('generateInvoice',this.state.patientsTreatments)}>
+          <Button onClick={()=>this.props.sendInvoiceData(this.state.patientsTreatments)}>
             Generate Invoice
-          </Button> */}
+          </Button>
         </Row>
       </Container>
     )

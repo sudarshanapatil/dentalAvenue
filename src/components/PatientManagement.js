@@ -4,7 +4,7 @@ import AddEditDeleteMenu from "./AddEditDeleteMenu";
 import ListPatient from "./ListPatient";
 import AddPatient from "./AddPatient";
 import ListPatientsTreatment from './ListPatientsTreatment'
-// import GenerateInvoice from './GenerateInvoice'
+import GenerateInvoice from './GenerateInvoice'
 
 class PatientManagement extends React.Component {
   constructor(props) {
@@ -38,8 +38,7 @@ class PatientManagement extends React.Component {
       })
       .catch(err => { console.log(err) })
   }
-  savePatientDetails = patientDetails => {
-    
+  savePatientDetails = patientDetails => {  
 
     this.setState({ currentAction: "showPatientTreatments", patientId: 121 })
     console.log(this.state.currentAction,"saved detals for patient call list")
@@ -55,12 +54,15 @@ class PatientManagement extends React.Component {
 
   };
 
-  setActionType = (actionType, invoiceData) => {
-    console.log(invoiceData, "parentIn",actionType)
+  setActionType = (actionType) => {
     this.setState({
       currentAction: actionType
     });
   };
+
+  sendInvoiceData=(invoiceData)=>{
+    this.setState({invoiceData,currentAction:'generateInvoice'})
+  }
 
   renderCurrentScreen = () => {
     switch (this.state.currentAction) {
@@ -69,8 +71,7 @@ class PatientManagement extends React.Component {
           <Row noGutters>
             <ListPatient patientsData={this.state.patientsData} />
           </Row>
-        );
-      
+        );      
       }
 
       case "add": {
@@ -80,8 +81,7 @@ class PatientManagement extends React.Component {
             setActionType={actionType => this.setActionType(actionType)}
             savePatientDetails={patientDetails => this.savePatientDetails(patientDetails)}
           />
-        );
-    
+        );    
       }
 
       case "edit": {
@@ -91,19 +91,19 @@ class PatientManagement extends React.Component {
             patientDetails={this.state.patientDetails} // TODO: send selected patient data
             setActionType={actionType => this.setActionType(actionType)}
           />
-        );
-    
+        );    
       }
+
       case "showPatientTreatments": {
         return (<ListPatientsTreatment
-          setActionType={actionType => this.setActionType(actionType)}
-          patientId={this.state.patientId} />)
-       
+          sendInvoiceData={this.sendInvoiceData}
+          patientId={this.state.patientId} />)       
       }
-      // case "generateInvoice": {
-      //   return (<GenerateInvoice invoiceData={this.state.invoiceData} />)
-      //   break;
-      // }
+
+      case "generateInvoice": {
+        return (<GenerateInvoice invoiceData={this.state.invoiceData} />)
+        
+      }
       case "delete": {
         // API call to delete patient details
         // TODO: return popup to delete
